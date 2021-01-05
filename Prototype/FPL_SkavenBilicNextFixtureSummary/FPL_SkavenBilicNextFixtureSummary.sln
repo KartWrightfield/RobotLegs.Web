@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPL_SkavenBilicNextFixtureSummary", "FPL_SkavenBilicNextFixtureSummary\FPL_SkavenBilicNextFixtureSummary.csproj", "{D640925A-870F-42D8-9CF4-B824F9A5B5DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D640925A-870F-42D8-9CF4-B824F9A5B5DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D640925A-870F-42D8-9CF4-B824F9A5B5DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D640925A-870F-42D8-9CF4-B824F9A5B5DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D640925A-870F-42D8-9CF4-B824F9A5B5DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11B32067-0EA3-415C-8AC3-7FC6C0EE4188}
+	EndGlobalSection
+EndGlobal
