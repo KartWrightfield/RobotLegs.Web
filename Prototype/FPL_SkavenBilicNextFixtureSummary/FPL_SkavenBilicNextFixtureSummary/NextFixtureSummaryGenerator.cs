@@ -118,15 +118,42 @@ namespace FPL_SkavenBilicNextFixtureSummary
         private void PlayerNicknameCheck(Element playerInfo)
         {
             switch(playerInfo.WebName)
-            {                
+            {
+                case "Antonio":
+                    playerInfo.WebName = "The Mage";
+                    return;
                 case "Calvert-Lewin":
                     playerInfo.WebName = "Goalvert-Lewin";
+                    return;
+                case "Cancelo":
+                    playerInfo.WebName = "Cancelo Culture";
                     return;
                 case "El Ghazi":
                     playerInfo.WebName = "The Warrior";
                     return;
                 case "Fernandes":
                     playerInfo.WebName = "Penandes";
+                    return;
+                case "Firmino":
+                    playerInfo.WebName = "Firminho";
+                    return;
+                case "Ings":
+                    playerInfo.WebName = "Daddy Ings";
+                    return;
+                case "Lingard":
+                    playerInfo.WebName = "Lingod";
+                    return;
+                case "Minamino":
+                    playerInfo.WebName = "Minaminho";
+                    return;
+                case "Ogbonna":
+                    playerInfo.WebName = "Ogbanger";
+                    return;
+                case "Pulisic":
+                    playerInfo.WebName = "NRAmar";
+                    return;
+                case "Townsend":
+                    playerInfo.WebName = "Clownsend";
                     return;
                 case "Vestergaard":
                     playerInfo.WebName = "Bestergaard";
@@ -179,7 +206,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
 
             for (int i = 0; i < _Fixtures.Length; i++)
             {
-                if (_Fixtures[i].KickoffTime > DateTime.Now)
+                if (_Fixtures[i].KickoffTime > DateTime.Now.AddMinutes(0))
                 { 
                     _NextFixtures.Add(_Fixtures[i]);
 
