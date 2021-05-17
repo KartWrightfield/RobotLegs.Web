@@ -29,7 +29,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
 
             foreach (var fixture in _NextFixtures)
             {
-                Console.WriteLine($"*{GetTeamNameFromId(fixture.TeamH)} vs. {GetTeamNameFromId(fixture.TeamA)}*");
+                Console.WriteLine($"*{GetTeamNameFromId(fixture.TeamH)} vs. {GetTeamNameFromId(fixture.TeamA)}* ({DateTime.Parse(fixture.KickoffTime.ToString()).ToShortTimeString()})");
 
                 foreach (var fplPlayer in _LeagueInfo.Standings.Results)
                 {
@@ -119,6 +119,9 @@ namespace FPL_SkavenBilicNextFixtureSummary
         {
             switch(playerInfo.WebName)
             {
+                case "Alisson":
+                    playerInfo.WebName = "Thini Alissoj";
+                    return;
                 case "Antonio":
                     playerInfo.WebName = "The Mage";
                     return;
@@ -141,7 +144,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "Daddy Ings";
                     return;
                 case "Lingard":
-                    playerInfo.WebName = "Lingod";
+                    playerInfo.WebName = "Messi Lingod";
                     return;
                 case "Minamino":
                     playerInfo.WebName = "Minaminho";
@@ -153,13 +156,17 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "NRAmar";
                     return;
                 case "Townsend":
-                    playerInfo.WebName = "Clownsend";
+                    if (playerInfo.FirstName == "Andros")
+                        playerInfo.WebName = "Clownsend";
                     return;
                 case "Vestergaard":
                     playerInfo.WebName = "Bestergaard";
                     return;
                 case "Walcott":
                     playerInfo.WebName = "WalGott";
+                    return;
+                case "Werner":
+                    playerInfo.WebName = "Ronson";
                     return;
                 default:
                     return;
