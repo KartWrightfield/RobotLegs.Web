@@ -8,13 +8,15 @@ namespace FPL_SkavenBilicNextFixtureSummary
 {
     class NextFixtureSummaryGenerator
     {
-        const int SlavenBilicLeagueId = 14434;
+        const int SlavenBilicLeagueId = 691446;
 
         GameInfo _MainGameInfo;
         LeagueInfo _LeagueInfo;
         Fixtures[] _Fixtures;
 
         List<Fixtures> _NextFixtures;
+
+        bool _openingFixture = false;
 
         public NextFixtureSummaryGenerator()
         {
@@ -31,16 +33,76 @@ namespace FPL_SkavenBilicNextFixtureSummary
             {
                 Console.WriteLine($"*{GetTeamNameFromId(fixture.TeamH)} vs. {GetTeamNameFromId(fixture.TeamA)}* ({DateTime.Parse(fixture.KickoffTime.ToString()).ToShortTimeString()})");
 
-                foreach (var fplPlayer in _LeagueInfo.Standings.Results)
+                foreach (var fplPlayer in _LeagueInfo.Standings.Results) //Needs to look at _LeagueInfo.NewEntries for the first gameweek
                 {
                     string shortName = GetShortNameFromId(fplPlayer.Entry);
                     Console.WriteLine($"{shortName}: {GetPlayerList(fplPlayer.Entry, fixture)}");
                 }
 
-                Console.WriteLine();
+                if (_openingFixture)
+                {
+                    Console.WriteLine();
+
+                    Console.WriteLine($"Gameweek {fixture.Event} Transfer Summary");
+
+                    foreach (var fplPlayer in _LeagueInfo.Standings.Results)
+                    {
+                        string shortName = GetShortNameFromId(fplPlayer.Entry);
+                        Console.WriteLine($"{shortName}: {GetPlayerTransfersForGameweek(fplPlayer.Entry, fixture.Event)}");
+                        Console.WriteLine();
+                    }
+                }
             }            
 
             Console.ReadLine();
+        }
+
+        private object GetPlayerTransfersForGameweek(long teamId, long? @event)
+        {
+            var fplPlayerTransfers = FPLApiAdapter.GetTeamTransfers(teamId);
+            StringBuilder playerTransfersString = new StringBuilder();
+
+            List<string> playersIn = new List<string>();
+            List<string> playersOut = new List<string>();
+
+            foreach (var transfer in fplPlayerTransfers.Where(t => t.Event == @event))
+            {
+                var playerInfo = _MainGameInfo.Elements.Where(p => p.Id == transfer.ElementIn).First();
+                PlayerNicknameCheck(playerInfo);
+
+                playersIn.Add(playerInfo.WebName);
+
+
+                var playerOutInfo = _MainGameInfo.Elements.Where(p => p.Id == transfer.ElementOut).First();
+                PlayerNicknameCheck(playerInfo);
+
+                playersOut.Add(playerOutInfo.WebName);
+            }
+
+            playerTransfersString.AppendLine();
+            playerTransfersString.Append("IN: ");
+            foreach (var player in playersIn)
+            {
+                playerTransfersString.Append(player);
+
+                if (playersIn.Last() != player)
+                    playerTransfersString.Append(", ");
+                else
+                    playerTransfersString.AppendLine(" ");
+            }
+
+            playerTransfersString.Append("OUT: ");
+            foreach (var player in playersOut)
+            {
+                playerTransfersString.Append(player);
+
+                if (playersIn.Last() != player)
+                    playerTransfersString.Append(", ");
+                else
+                    playerTransfersString.Append(" ");
+            }
+
+            return playerTransfersString.ToString();
         }
 
         private string GetPlayerList(long teamId, Fixtures fixture)
@@ -144,7 +206,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "Daddy Ings";
                     return;
                 case "Lingard":
-                    playerInfo.WebName = "Messi Lingod";
+                    playerInfo.WebName = "Lingod";
                     return;
                 case "Minamino":
                     playerInfo.WebName = "Minaminho";
@@ -152,8 +214,14 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Ogbonna":
                     playerInfo.WebName = "Ogbanger";
                     return;
+                case "Pogba":
+                    playerInfo.WebName = "Pau Pogba";
+                    return;
                 case "Pulisic":
                     playerInfo.WebName = "NRAmar";
+                    return;
+                case "Ronaldo":
+                    playerInfo.WebName = "Penaldo";
                     return;
                 case "Townsend":
                     if (playerInfo.FirstName == "Andros")
@@ -177,17 +245,17 @@ namespace FPL_SkavenBilicNextFixtureSummary
         {
             switch (id)
             {
-                case 72935:
+                case 3096301:
                     return "Felix";                
-                case 526187:
+                case 3132245:
                     return "Higgins";
-                case 3221875:
+                case 4111347:
                     return "Joe";
-                case 1025894:
+                case 1034751:
                     return "Meme";
-                case 78795:
+                case 87787:
                     return "Nodge";
-                case 201866:
+                case 2731988:
                     return "Sam";                
             }
 
@@ -217,11 +285,21 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 { 
                     _NextFixtures.Add(_Fixtures[i]);
 
+                    if (_Fixtures[i].Event == _Fixtures[i-1].Event + 1)
+                    {
+                        _openingFixture = true;
+                    }
+
                     bool moreFixtures = true;
                     int extraFixtureCount = 1;
 
                     while (moreFixtures)
                     {
+                        if (extraFixtureCount == 10)
+                        {
+                            moreFixtures = false;
+                            continue;
+                        }
                         if (_Fixtures[i + extraFixtureCount].KickoffTime == null)
                         {
                             moreFixtures = false;

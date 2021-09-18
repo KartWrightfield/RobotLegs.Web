@@ -1,4 +1,5 @@
-﻿using FPLCore;
+﻿using FPL_SkavenBilicNextFixtureSummary.Classes.External;
+using FPLCore;
 using System;
 using System.Net;
 
@@ -97,6 +98,37 @@ namespace FPL_SkavenBilicNextFixtureSummary
             }
 
             return teamGameweekSelections;
+        }
+
+        public static TeamTransfers[] GetTeamTransfers(long teamId)
+        {
+            string url = $"https://fantasy.premierleague.com/api/entry/{teamId}/transfers/";
+            var jsonData = string.Empty;
+
+            using (var webClient = new WebClient())
+            {
+                try
+                {
+                    jsonData = webClient.DownloadString(url);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Failed downloading team gameweek JSON", ex);
+                }
+            }
+
+            TeamTransfers[] teamTransfers;
+
+            try
+            {
+                teamTransfers = TeamTransfers.FromJson(jsonData);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to serialize team gameweek JSON", ex);
+            }
+
+            return teamTransfers;
         }
 
         public static Fixtures[] GetFixtures()
