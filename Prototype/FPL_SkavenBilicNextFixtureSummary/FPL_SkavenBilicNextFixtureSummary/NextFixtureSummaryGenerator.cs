@@ -39,20 +39,22 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     Console.WriteLine($"{shortName}: {GetPlayerList(fplPlayer.Entry, fixture)}");
                 }
 
-                if (_openingFixture)
+                Console.WriteLine();
+            }
+
+            if (_openingFixture)
+            {
+                Console.WriteLine();
+
+                Console.WriteLine($"Gameweek {_NextFixtures.First().Event} Transfer Summary");
+
+                foreach (var fplPlayer in _LeagueInfo.Standings.Results)
                 {
+                    string shortName = GetShortNameFromId(fplPlayer.Entry);
+                    Console.WriteLine($"{shortName}: {GetPlayerTransfersForGameweek(fplPlayer.Entry, _NextFixtures.First().Event)}");
                     Console.WriteLine();
-
-                    Console.WriteLine($"Gameweek {fixture.Event} Transfer Summary");
-
-                    foreach (var fplPlayer in _LeagueInfo.Standings.Results)
-                    {
-                        string shortName = GetShortNameFromId(fplPlayer.Entry);
-                        Console.WriteLine($"{shortName}: {GetPlayerTransfersForGameweek(fplPlayer.Entry, fixture.Event)}");
-                        Console.WriteLine();
-                    }
                 }
-            }            
+            }
 
             Console.ReadLine();
         }
@@ -96,7 +98,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
             {
                 playerTransfersString.Append(player);
 
-                if (playersIn.Last() != player)
+                if (playersOut.Last() != player)
                     playerTransfersString.Append(", ");
                 else
                     playerTransfersString.Append(" ");
@@ -184,6 +186,9 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Alisson":
                     playerInfo.WebName = "Thini Alissoj";
                     return;
+                case "Alonso":
+                    playerInfo.WebName = "Fucking Murderer";
+                    return;
                 case "Antonio":
                     playerInfo.WebName = "The Mage";
                     return;
@@ -268,7 +273,13 @@ namespace FPL_SkavenBilicNextFixtureSummary
             {
                 if (teamId == team.Id)
                 {
-                    return team.Name;
+                    switch (team.Name)
+                    {
+                        case "Norwich":
+                            return "~Frank Lampard's~ Norwich";
+                        default:
+                            return team.Name;
+                    }
                 }
             }
 
@@ -281,7 +292,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
 
             for (int i = 0; i < _Fixtures.Length; i++)
             {
-                if (_Fixtures[i].KickoffTime > DateTime.Now.AddMinutes(0))
+                if (_Fixtures[i].KickoffTime > DateTime.Now.AddMinutes(300))
                 { 
                     _NextFixtures.Add(_Fixtures[i]);
 
