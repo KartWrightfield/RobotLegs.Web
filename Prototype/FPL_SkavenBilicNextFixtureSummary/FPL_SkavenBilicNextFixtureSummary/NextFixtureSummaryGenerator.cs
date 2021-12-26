@@ -76,7 +76,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
 
 
                 var playerOutInfo = _MainGameInfo.Elements.Where(p => p.Id == transfer.ElementOut).First();
-                PlayerNicknameCheck(playerInfo);
+                PlayerNicknameCheck(playerOutInfo);
 
                 playersOut.Add(playerOutInfo.WebName);
             }
@@ -183,6 +183,9 @@ namespace FPL_SkavenBilicNextFixtureSummary
         {
             switch(playerInfo.WebName)
             {
+                case "Alexander-Arnold":
+                    playerInfo.WebName = "TAA";
+                    return;
                 case "Alisson":
                     playerInfo.WebName = "Thini Alissoj";
                     return;
@@ -192,11 +195,23 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Antonio":
                     playerInfo.WebName = "The Mage";
                     return;
+                case "Bernardo":
+                    playerInfo.WebName = "Banano Silva";
+                    return;
+                case "Broja":
+                    playerInfo.WebName = "Armando 'Do you even lift?' Broja";
+                    return;
                 case "Calvert-Lewin":
                     playerInfo.WebName = "Goalvert-Lewin";
                     return;
                 case "Cancelo":
                     playerInfo.WebName = "Cancelo Culture";
+                    return;
+                case "Dennis":
+                    playerInfo.WebName = "The Menace";
+                    return;
+                case "Dewsbury-Hall":
+                    playerInfo.WebName = "Wedding Venue";
                     return;
                 case "El Ghazi":
                     playerInfo.WebName = "The Warrior";
@@ -207,14 +222,26 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Firmino":
                     playerInfo.WebName = "Firminho";
                     return;
+                case "Iheanacho":
+                    playerInfo.WebName = "Macho Man";
+                    return;
                 case "Ings":
                     playerInfo.WebName = "Daddy Ings";
                     return;
                 case "Lingard":
                     playerInfo.WebName = "Lingod";
                     return;
+                case "Lukaku":
+                    playerInfo.WebName = "RO-ME-LU";
+                    return;
+                case "Mbeumo":
+                    playerInfo.WebName = "Kinder Mbeumo";
+                    return;
                 case "Minamino":
                     playerInfo.WebName = "Minaminho";
+                    return;
+                case "Mount":
+                    playerInfo.WebName = "Mountain Mase";
                     return;
                 case "Ogbonna":
                     playerInfo.WebName = "Ogbanger";
@@ -227,6 +254,10 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     return;
                 case "Ronaldo":
                     playerInfo.WebName = "Penaldo";
+                    return;
+                case "Salah":
+                    if (DateTime.Now.Month > 11 || DateTime.Now.Month < 3)
+                        playerInfo.WebName = "Snow Salah";
                     return;
                 case "Townsend":
                     if (playerInfo.FirstName == "Andros")
@@ -275,8 +306,18 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 {
                     switch (team.Name)
                     {
+                        case "Arsenal":
+                            return "The Arsenal";
+                        case "Aston Villa":
+                            return "Stevie G's Claret & Blue Army";
+                        case "Chelsea":
+                            return "The Tucheliban";
                         case "Norwich":
-                            return "~Frank Lampard's~ Norwich";
+                            return "~Frank Lampard's~ Norwich City";
+                        case "Spurs":
+                            return "Lads, it's Tottenham";
+                        case "West Ham":
+                            return "Did You Just Say 'West Ham'?";
                         default:
                             return team.Name;
                     }
@@ -292,7 +333,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
 
             for (int i = 0; i < _Fixtures.Length; i++)
             {
-                if (_Fixtures[i].KickoffTime > DateTime.Now.AddMinutes(300))
+                if (_Fixtures[i].KickoffTime > DateTime.Now.AddMinutes(0))
                 { 
                     _NextFixtures.Add(_Fixtures[i]);
 

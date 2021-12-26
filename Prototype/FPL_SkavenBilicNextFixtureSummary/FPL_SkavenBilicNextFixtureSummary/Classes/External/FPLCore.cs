@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 using System.Globalization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -33,79 +33,286 @@ namespace FPLCore
         public ElementType[] ElementTypes { get; set; }
     }
 
-    public partial class ElementStat
+    public class ChipPlay
     {
-        [JsonProperty("label")]
-        public string Label { get; set; }
+        [JsonProperty("chip_name")]
+        public string ChipName { get; set; }
+
+        [JsonProperty("num_played")]
+        public int NumPlayed { get; set; }
+    }
+
+    public class TopElementInfo
+    {
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
+        [JsonProperty("points")]
+        public int Points { get; set; }
+    }
+
+    public class Event
+    {
+        [JsonProperty("id")]
+        public int Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
+
+        [JsonProperty("deadline_time")]
+        public DateTime DeadlineTime { get; set; }
+
+        [JsonProperty("average_entry_score")]
+        public int AverageEntryScore { get; set; }
+
+        [JsonProperty("finished")]
+        public bool Finished { get; set; }
+
+        [JsonProperty("data_checked")]
+        public bool DataChecked { get; set; }
+
+        [JsonProperty("highest_scoring_entry")]
+        public int? HighestScoringEntry { get; set; }
+
+        [JsonProperty("deadline_time_epoch")]
+        public int DeadlineTimeEpoch { get; set; }
+
+        [JsonProperty("deadline_time_game_offset")]
+        public int DeadlineTimeGameOffset { get; set; }
+
+        [JsonProperty("highest_score")]
+        public int? HighestScore { get; set; }
+
+        [JsonProperty("is_previous")]
+        public bool IsPrevious { get; set; }
+
+        [JsonProperty("is_current")]
+        public bool IsCurrent { get; set; }
+
+        [JsonProperty("is_next")]
+        public bool IsNext { get; set; }
+
+        [JsonProperty("chip_plays")]
+        public List<ChipPlay> ChipPlays { get; set; }
+
+        [JsonProperty("most_selected")]
+        public int? MostSelected { get; set; }
+
+        [JsonProperty("most_transferred_in")]
+        public int? MostTransferredIn { get; set; }
+
+        [JsonProperty("top_element")]
+        public int? TopElement { get; set; }
+
+        [JsonProperty("top_element_info")]
+        public TopElementInfo TopElementInfo { get; set; }
+
+        [JsonProperty("transfers_made")]
+        public int TransfersMade { get; set; }
+
+        [JsonProperty("most_captained")]
+        public int? MostCaptained { get; set; }
+
+        [JsonProperty("most_vice_captained")]
+        public int? MostViceCaptained { get; set; }
     }
 
-    public partial class ElementType
+    public class GameSettings
+    {
+        [JsonProperty("league_join_private_max")]
+        public int LeagueJoinPrivateMax { get; set; }
+
+        [JsonProperty("league_join_public_max")]
+        public int LeagueJoinPublicMax { get; set; }
+
+        [JsonProperty("league_max_size_public_classic")]
+        public int LeagueMaxSizePublicClassic { get; set; }
+
+        [JsonProperty("league_max_size_public_h2h")]
+        public int LeagueMaxSizePublicH2h { get; set; }
+
+        [JsonProperty("league_max_size_private_h2h")]
+        public int LeagueMaxSizePrivateH2h { get; set; }
+
+        [JsonProperty("league_max_ko_rounds_private_h2h")]
+        public int LeagueMaxKoRoundsPrivateH2h { get; set; }
+
+        [JsonProperty("league_prefix_public")]
+        public string LeaguePrefixPublic { get; set; }
+
+        [JsonProperty("league_points_h2h_win")]
+        public int LeaguePointsH2hWin { get; set; }
+
+        [JsonProperty("league_points_h2h_lose")]
+        public int LeaguePointsH2hLose { get; set; }
+
+        [JsonProperty("league_points_h2h_draw")]
+        public int LeaguePointsH2hDraw { get; set; }
+
+        [JsonProperty("league_ko_first_instead_of_random")]
+        public bool LeagueKoFirstInsteadOfRandom { get; set; }
+
+        [JsonProperty("cup_start_event_id")]
+        public object CupStartEventId { get; set; }
+
+        [JsonProperty("cup_stop_event_id")]
+        public object CupStopEventId { get; set; }
+
+        [JsonProperty("cup_qualifying_method")]
+        public object CupQualifyingMethod { get; set; }
+
+        [JsonProperty("cup_type")]
+        public object CupType { get; set; }
+
+        [JsonProperty("squad_squadplay")]
+        public int SquadSquadplay { get; set; }
+
+        [JsonProperty("squad_squadsize")]
+        public int SquadSquadsize { get; set; }
+
+        [JsonProperty("squad_team_limit")]
+        public int SquadTeamLimit { get; set; }
+
+        [JsonProperty("squad_total_spend")]
+        public int SquadTotalSpend { get; set; }
+
+        [JsonProperty("ui_currency_multiplier")]
+        public int UiCurrencyMultiplier { get; set; }
+
+        [JsonProperty("ui_use_special_shirts")]
+        public bool UiUseSpecialShirts { get; set; }
+
+        [JsonProperty("ui_special_shirt_exclusions")]
+        public List<object> UiSpecialShirtExclusions { get; set; }
+
+        [JsonProperty("stats_form_days")]
+        public int StatsFormDays { get; set; }
+
+        [JsonProperty("sys_vice_captain_enabled")]
+        public bool SysViceCaptainEnabled { get; set; }
+
+        [JsonProperty("transfers_cap")]
+        public int TransfersCap { get; set; }
+
+        [JsonProperty("transfers_sell_on_fee")]
+        public double TransfersSellOnFee { get; set; }
+
+        [JsonProperty("league_h2h_tiebreak_stats")]
+        public List<string> LeagueH2hTiebreakStats { get; set; }
+
+        [JsonProperty("timezone")]
+        public string Timezone { get; set; }
+    }
+
+    public class Phase
     {
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
-        [JsonProperty("plural_name")]
-        public string PluralName { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
 
-        [JsonProperty("plural_name_short")]
-        public string PluralNameShort { get; set; }
+        [JsonProperty("start_event")]
+        public int StartEvent { get; set; }
 
-        [JsonProperty("singular_name")]
-        public string SingularName { get; set; }
-
-        [JsonProperty("singular_name_short")]
-        public string SingularNameShort { get; set; }
-
-        [JsonProperty("squad_select")]
-        public long SquadSelect { get; set; }
-
-        [JsonProperty("squad_min_play")]
-        public long SquadMinPlay { get; set; }
-
-        [JsonProperty("squad_max_play")]
-        public long SquadMaxPlay { get; set; }
-
-        [JsonProperty("ui_shirt_specific")]
-        public bool UiShirtSpecific { get; set; }
-
-        [JsonProperty("sub_positions_locked")]
-        public long[] SubPositionsLocked { get; set; }
-
-        [JsonProperty("element_count")]
-        public long ElementCount { get; set; }
+        [JsonProperty("stop_event")]
+        public int StopEvent { get; set; }
     }
 
-    public partial class Element
+    public class Team
+    {
+        [JsonProperty("code")]
+        public int Code { get; set; }
+
+        [JsonProperty("draw")]
+        public int Draw { get; set; }
+
+        [JsonProperty("form")]
+        public object Form { get; set; }
+
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
+        [JsonProperty("loss")]
+        public int Loss { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("played")]
+        public int Played { get; set; }
+
+        [JsonProperty("points")]
+        public int Points { get; set; }
+
+        [JsonProperty("position")]
+        public int Position { get; set; }
+
+        [JsonProperty("short_name")]
+        public string ShortName { get; set; }
+
+        [JsonProperty("strength")]
+        public int Strength { get; set; }
+
+        [JsonProperty("team_division")]
+        public object TeamDivision { get; set; }
+
+        [JsonProperty("unavailable")]
+        public bool Unavailable { get; set; }
+
+        [JsonProperty("win")]
+        public int Win { get; set; }
+
+        [JsonProperty("strength_overall_home")]
+        public int StrengthOverallHome { get; set; }
+
+        [JsonProperty("strength_overall_away")]
+        public int StrengthOverallAway { get; set; }
+
+        [JsonProperty("strength_attack_home")]
+        public int StrengthAttackHome { get; set; }
+
+        [JsonProperty("strength_attack_away")]
+        public int StrengthAttackAway { get; set; }
+
+        [JsonProperty("strength_defence_home")]
+        public int StrengthDefenceHome { get; set; }
+
+        [JsonProperty("strength_defence_away")]
+        public int StrengthDefenceAway { get; set; }
+
+        [JsonProperty("pulse_id")]
+        public int PulseId { get; set; }
+    }
+
+    public class Element
     {
         [JsonProperty("chance_of_playing_next_round")]
-        public long? ChanceOfPlayingNextRound { get; set; }
+        public int? ChanceOfPlayingNextRound { get; set; }
 
         [JsonProperty("chance_of_playing_this_round")]
-        public long? ChanceOfPlayingThisRound { get; set; }
+        public int? ChanceOfPlayingThisRound { get; set; }
 
         [JsonProperty("code")]
-        public long Code { get; set; }
+        public int Code { get; set; }
 
         [JsonProperty("cost_change_event")]
-        public long CostChangeEvent { get; set; }
+        public int CostChangeEvent { get; set; }
 
         [JsonProperty("cost_change_event_fall")]
-        public long CostChangeEventFall { get; set; }
+        public int CostChangeEventFall { get; set; }
 
         [JsonProperty("cost_change_start")]
-        public long CostChangeStart { get; set; }
+        public int CostChangeStart { get; set; }
 
         [JsonProperty("cost_change_start_fall")]
-        public long CostChangeStartFall { get; set; }
+        public int CostChangeStartFall { get; set; }
 
         [JsonProperty("dreamteam_count")]
-        public long DreamteamCount { get; set; }
+        public int DreamteamCount { get; set; }
 
         [JsonProperty("element_type")]
-        public long ElementType { get; set; }
+        public int ElementType { get; set; }
 
         [JsonProperty("ep_next")]
         public string EpNext { get; set; }
@@ -114,7 +321,7 @@ namespace FPLCore
         public string EpThis { get; set; }
 
         [JsonProperty("event_points")]
-        public long EventPoints { get; set; }
+        public int EventPoints { get; set; }
 
         [JsonProperty("first_name")]
         public string FirstName { get; set; }
@@ -123,7 +330,7 @@ namespace FPLCore
         public string Form { get; set; }
 
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         [JsonProperty("in_dreamteam")]
         public bool InDreamteam { get; set; }
@@ -132,10 +339,10 @@ namespace FPLCore
         public string News { get; set; }
 
         [JsonProperty("news_added")]
-        public DateTimeOffset? NewsAdded { get; set; }
+        public DateTime? NewsAdded { get; set; }
 
         [JsonProperty("now_cost")]
-        public long NowCost { get; set; }
+        public int NowCost { get; set; }
 
         [JsonProperty("photo")]
         public string Photo { get; set; }
@@ -156,28 +363,28 @@ namespace FPLCore
         public object SquadNumber { get; set; }
 
         [JsonProperty("status")]
-        public Status Status { get; set; }
+        public string Status { get; set; }
 
         [JsonProperty("team")]
-        public long Team { get; set; }
+        public int Team { get; set; }
 
         [JsonProperty("team_code")]
-        public long TeamCode { get; set; }
+        public int TeamCode { get; set; }
 
         [JsonProperty("total_points")]
-        public long TotalPoints { get; set; }
+        public int TotalPoints { get; set; }
 
         [JsonProperty("transfers_in")]
-        public long TransfersIn { get; set; }
+        public int TransfersIn { get; set; }
 
         [JsonProperty("transfers_in_event")]
-        public long TransfersInEvent { get; set; }
+        public int TransfersInEvent { get; set; }
 
         [JsonProperty("transfers_out")]
-        public long TransfersOut { get; set; }
+        public int TransfersOut { get; set; }
 
         [JsonProperty("transfers_out_event")]
-        public long TransfersOutEvent { get; set; }
+        public int TransfersOutEvent { get; set; }
 
         [JsonProperty("value_form")]
         public string ValueForm { get; set; }
@@ -189,43 +396,43 @@ namespace FPLCore
         public string WebName { get; set; }
 
         [JsonProperty("minutes")]
-        public long Minutes { get; set; }
+        public int Minutes { get; set; }
 
         [JsonProperty("goals_scored")]
-        public long GoalsScored { get; set; }
+        public int GoalsScored { get; set; }
 
         [JsonProperty("assists")]
-        public long Assists { get; set; }
+        public int Assists { get; set; }
 
         [JsonProperty("clean_sheets")]
-        public long CleanSheets { get; set; }
+        public int CleanSheets { get; set; }
 
         [JsonProperty("goals_conceded")]
-        public long GoalsConceded { get; set; }
+        public int GoalsConceded { get; set; }
 
         [JsonProperty("own_goals")]
-        public long OwnGoals { get; set; }
+        public int OwnGoals { get; set; }
 
         [JsonProperty("penalties_saved")]
-        public long PenaltiesSaved { get; set; }
+        public int PenaltiesSaved { get; set; }
 
         [JsonProperty("penalties_missed")]
-        public long PenaltiesMissed { get; set; }
+        public int PenaltiesMissed { get; set; }
 
         [JsonProperty("yellow_cards")]
-        public long YellowCards { get; set; }
+        public int YellowCards { get; set; }
 
         [JsonProperty("red_cards")]
-        public long RedCards { get; set; }
+        public int RedCards { get; set; }
 
         [JsonProperty("saves")]
-        public long Saves { get; set; }
+        public int Saves { get; set; }
 
         [JsonProperty("bonus")]
-        public long Bonus { get; set; }
+        public int Bonus { get; set; }
 
         [JsonProperty("bps")]
-        public long Bps { get; set; }
+        public int Bps { get; set; }
 
         [JsonProperty("influence")]
         public string Influence { get; set; }
@@ -240,298 +447,118 @@ namespace FPLCore
         public string IctIndex { get; set; }
 
         [JsonProperty("influence_rank")]
-        public long InfluenceRank { get; set; }
+        public int InfluenceRank { get; set; }
 
         [JsonProperty("influence_rank_type")]
-        public long InfluenceRankType { get; set; }
+        public int InfluenceRankType { get; set; }
 
         [JsonProperty("creativity_rank")]
-        public long CreativityRank { get; set; }
+        public int CreativityRank { get; set; }
 
         [JsonProperty("creativity_rank_type")]
-        public long CreativityRankType { get; set; }
+        public int CreativityRankType { get; set; }
 
         [JsonProperty("threat_rank")]
-        public long ThreatRank { get; set; }
+        public int ThreatRank { get; set; }
 
         [JsonProperty("threat_rank_type")]
-        public long ThreatRankType { get; set; }
+        public int ThreatRankType { get; set; }
 
         [JsonProperty("ict_index_rank")]
-        public long IctIndexRank { get; set; }
+        public int IctIndexRank { get; set; }
 
         [JsonProperty("ict_index_rank_type")]
-        public long IctIndexRankType { get; set; }
+        public int IctIndexRankType { get; set; }
 
         [JsonProperty("corners_and_indirect_freekicks_order")]
-        public long? CornersAndIndirectFreekicksOrder { get; set; }
+        public int? CornersAndIndirectFreekicksOrder { get; set; }
 
         [JsonProperty("corners_and_indirect_freekicks_text")]
         public string CornersAndIndirectFreekicksText { get; set; }
 
         [JsonProperty("direct_freekicks_order")]
-        public long? DirectFreekicksOrder { get; set; }
+        public int? DirectFreekicksOrder { get; set; }
 
         [JsonProperty("direct_freekicks_text")]
         public string DirectFreekicksText { get; set; }
 
         [JsonProperty("penalties_order")]
-        public long? PenaltiesOrder { get; set; }
+        public int? PenaltiesOrder { get; set; }
 
         [JsonProperty("penalties_text")]
         public string PenaltiesText { get; set; }
     }
 
-    public partial class Event
+    public class ElementStat
     {
-        [JsonProperty("id")]
-        public long Id { get; set; }
+        [JsonProperty("label")]
+        public string Label { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
-
-        [JsonProperty("deadline_time")]
-        public DateTimeOffset DeadlineTime { get; set; }
-
-        [JsonProperty("average_entry_score")]
-        public long AverageEntryScore { get; set; }
-
-        [JsonProperty("finished")]
-        public bool Finished { get; set; }
-
-        [JsonProperty("data_checked")]
-        public bool DataChecked { get; set; }
-
-        [JsonProperty("highest_scoring_entry")]
-        public long? HighestScoringEntry { get; set; }
-
-        [JsonProperty("deadline_time_epoch")]
-        public long DeadlineTimeEpoch { get; set; }
-
-        [JsonProperty("deadline_time_game_offset")]
-        public long DeadlineTimeGameOffset { get; set; }
-
-        [JsonProperty("highest_score")]
-        public long? HighestScore { get; set; }
-
-        [JsonProperty("is_previous")]
-        public bool IsPrevious { get; set; }
-
-        [JsonProperty("is_current")]
-        public bool IsCurrent { get; set; }
-
-        [JsonProperty("is_next")]
-        public bool IsNext { get; set; }
-
-        [JsonProperty("chip_plays")]
-        public ChipPlay[] ChipPlays { get; set; }
-
-        [JsonProperty("most_selected")]
-        public long? MostSelected { get; set; }
-
-        [JsonProperty("most_transferred_in")]
-        public long? MostTransferredIn { get; set; }
-
-        [JsonProperty("top_element")]
-        public long? TopElement { get; set; }
-
-        [JsonProperty("top_element_info")]
-        public TopElementInfo TopElementInfo { get; set; }
-
-        [JsonProperty("transfers_made")]
-        public long TransfersMade { get; set; }
-
-        [JsonProperty("most_captained")]
-        public long? MostCaptained { get; set; }
-
-        [JsonProperty("most_vice_captained")]
-        public long? MostViceCaptained { get; set; }
     }
 
-    public partial class ChipPlay
-    {
-        [JsonProperty("chip_name")]
-        public ChipName ChipName { get; set; }
-
-        [JsonProperty("num_played")]
-        public long NumPlayed { get; set; }
-    }
-
-    public partial class TopElementInfo
+    public class ElementType
     {
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
-        [JsonProperty("points")]
-        public long Points { get; set; }
+        [JsonProperty("plural_name")]
+        public string PluralName { get; set; }
+
+        [JsonProperty("plural_name_short")]
+        public string PluralNameShort { get; set; }
+
+        [JsonProperty("singular_name")]
+        public string SingularName { get; set; }
+
+        [JsonProperty("singular_name_short")]
+        public string SingularNameShort { get; set; }
+
+        [JsonProperty("squad_select")]
+        public int SquadSelect { get; set; }
+
+        [JsonProperty("squad_min_play")]
+        public int SquadMinPlay { get; set; }
+
+        [JsonProperty("squad_max_play")]
+        public int SquadMaxPlay { get; set; }
+
+        [JsonProperty("ui_shirt_specific")]
+        public bool UiShirtSpecific { get; set; }
+
+        [JsonProperty("sub_positions_locked")]
+        public List<int> SubPositionsLocked { get; set; }
+
+        [JsonProperty("element_count")]
+        public int ElementCount { get; set; }
     }
 
-    public partial class GameSettings
+    public class Root
     {
-        [JsonProperty("league_join_private_max")]
-        public long LeagueJoinPrivateMax { get; set; }
+        [JsonProperty("events")]
+        public List<Event> Events { get; set; }
 
-        [JsonProperty("league_join_public_max")]
-        public long LeagueJoinPublicMax { get; set; }
+        [JsonProperty("game_settings")]
+        public GameSettings GameSettings { get; set; }
 
-        [JsonProperty("league_max_size_public_classic")]
-        public long LeagueMaxSizePublicClassic { get; set; }
+        [JsonProperty("phases")]
+        public List<Phase> Phases { get; set; }
 
-        [JsonProperty("league_max_size_public_h2h")]
-        public long LeagueMaxSizePublicH2H { get; set; }
+        [JsonProperty("teams")]
+        public List<Team> Teams { get; set; }
 
-        [JsonProperty("league_max_size_private_h2h")]
-        public long LeagueMaxSizePrivateH2H { get; set; }
+        [JsonProperty("total_players")]
+        public int TotalPlayers { get; set; }
 
-        [JsonProperty("league_max_ko_rounds_private_h2h")]
-        public long LeagueMaxKoRoundsPrivateH2H { get; set; }
+        [JsonProperty("elements")]
+        public List<Element> Elements { get; set; }
 
-        [JsonProperty("league_prefix_public")]
-        public string LeaguePrefixPublic { get; set; }
+        [JsonProperty("element_stats")]
+        public List<ElementStat> ElementStats { get; set; }
 
-        [JsonProperty("league_points_h2h_win")]
-        public long LeaguePointsH2HWin { get; set; }
-
-        [JsonProperty("league_points_h2h_lose")]
-        public long LeaguePointsH2HLose { get; set; }
-
-        [JsonProperty("league_points_h2h_draw")]
-        public long LeaguePointsH2HDraw { get; set; }
-
-        [JsonProperty("league_ko_first_instead_of_random")]
-        public bool LeagueKoFirstInsteadOfRandom { get; set; }
-
-        [JsonProperty("cup_start_event_id")]
-        public long CupStartEventId { get; set; }
-
-        [JsonProperty("cup_stop_event_id")]
-        public long CupStopEventId { get; set; }
-
-        [JsonProperty("cup_qualifying_method")]
-        public string CupQualifyingMethod { get; set; }
-
-        [JsonProperty("cup_type")]
-        public string CupType { get; set; }
-
-        [JsonProperty("squad_squadplay")]
-        public long SquadSquadplay { get; set; }
-
-        [JsonProperty("squad_squadsize")]
-        public long SquadSquadsize { get; set; }
-
-        [JsonProperty("squad_team_limit")]
-        public long SquadTeamLimit { get; set; }
-
-        [JsonProperty("squad_total_spend")]
-        public long SquadTotalSpend { get; set; }
-
-        [JsonProperty("ui_currency_multiplier")]
-        public long UiCurrencyMultiplier { get; set; }
-
-        [JsonProperty("ui_use_special_shirts")]
-        public bool UiUseSpecialShirts { get; set; }
-
-        [JsonProperty("ui_special_shirt_exclusions")]
-        public object[] UiSpecialShirtExclusions { get; set; }
-
-        [JsonProperty("stats_form_days")]
-        public long StatsFormDays { get; set; }
-
-        [JsonProperty("sys_vice_captain_enabled")]
-        public bool SysViceCaptainEnabled { get; set; }
-
-        [JsonProperty("transfers_cap")]
-        public long TransfersCap { get; set; }
-
-        [JsonProperty("transfers_sell_on_fee")]
-        public double TransfersSellOnFee { get; set; }
-
-        [JsonProperty("league_h2h_tiebreak_stats")]
-        public string[] LeagueH2HTiebreakStats { get; set; }
-
-        [JsonProperty("timezone")]
-        public string Timezone { get; set; }
-    }
-
-    public partial class Phase
-    {
-        [JsonProperty("id")]
-        public long Id { get; set; }
-
-        [JsonProperty("name")]
-        public string Name { get; set; }
-
-        [JsonProperty("start_event")]
-        public long StartEvent { get; set; }
-
-        [JsonProperty("stop_event")]
-        public long StopEvent { get; set; }
-    }
-
-    public partial class Team
-    {
-        [JsonProperty("code")]
-        public long Code { get; set; }
-
-        [JsonProperty("draw")]
-        public long Draw { get; set; }
-
-        [JsonProperty("form")]
-        public object Form { get; set; }
-
-        [JsonProperty("id")]
-        public long Id { get; set; }
-
-        [JsonProperty("loss")]
-        public long Loss { get; set; }
-
-        [JsonProperty("name")]
-        public string Name { get; set; }
-
-        [JsonProperty("played")]
-        public long Played { get; set; }
-
-        [JsonProperty("points")]
-        public long Points { get; set; }
-
-        [JsonProperty("position")]
-        public long Position { get; set; }
-
-        [JsonProperty("short_name")]
-        public string ShortName { get; set; }
-
-        [JsonProperty("strength")]
-        public long Strength { get; set; }
-
-        [JsonProperty("team_division")]
-        public object TeamDivision { get; set; }
-
-        [JsonProperty("unavailable")]
-        public bool Unavailable { get; set; }
-
-        [JsonProperty("win")]
-        public long Win { get; set; }
-
-        [JsonProperty("strength_overall_home")]
-        public long StrengthOverallHome { get; set; }
-
-        [JsonProperty("strength_overall_away")]
-        public long StrengthOverallAway { get; set; }
-
-        [JsonProperty("strength_attack_home")]
-        public long StrengthAttackHome { get; set; }
-
-        [JsonProperty("strength_attack_away")]
-        public long StrengthAttackAway { get; set; }
-
-        [JsonProperty("strength_defence_home")]
-        public long StrengthDefenceHome { get; set; }
-
-        [JsonProperty("strength_defence_away")]
-        public long StrengthDefenceAway { get; set; }
-
-        [JsonProperty("pulse_id")]
-        public long PulseId { get; set; }
+        [JsonProperty("element_types")]
+        public List<ElementType> ElementTypes { get; set; }
     }
 
     public enum Status { A, D, I, N, S, U };
