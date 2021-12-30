@@ -241,7 +241,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "Minaminho";
                     return;
                 case "Mount":
-                    playerInfo.WebName = "Mountain Mase";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Mountain Mase",
+                        "Pickey Pount"
+                    });
                     return;
                 case "Ogbonna":
                     playerInfo.WebName = "Ogbanger";
@@ -253,7 +257,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "NRAmar";
                     return;
                 case "Ronaldo":
-                    playerInfo.WebName = "Penaldo";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Omicronaldo", 
+                        "Penaldo"
+                    });
                     return;
                 case "Salah":
                     if (DateTime.Now.Month > 11 || DateTime.Now.Month < 3)
@@ -275,6 +283,13 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 default:
                     return;
             }
+        }
+
+        private string PickRandomNickname(List<string> nicknames)
+        {
+            var rand = new Random();
+
+            return nicknames[rand.Next(nicknames.Count)];
         }
 
         private string GetShortNameFromId(long id)
