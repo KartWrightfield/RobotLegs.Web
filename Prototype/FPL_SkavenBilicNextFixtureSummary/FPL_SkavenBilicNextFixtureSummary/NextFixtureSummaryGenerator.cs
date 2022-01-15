@@ -207,6 +207,9 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Cancelo":
                     playerInfo.WebName = "Cancelo Culture";
                     return;
+                case "Coutinho":
+                    playerInfo.WebName = "It's Fucking Coutinho";
+                    return;
                 case "Dennis":
                     playerInfo.WebName = "The Menace";
                     return;
@@ -228,11 +231,20 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Ings":
                     playerInfo.WebName = "Daddy Ings";
                     return;
+                case "Krul":
+                    playerInfo.WebName = "Cruel";
+                    return;
+                case "Laporte":
+                    playerInfo.WebName = "Who's Eric Laporte?";
+                    return;
                 case "Lingard":
                     playerInfo.WebName = "Lingod";
                     return;
                 case "Lukaku":
-                    playerInfo.WebName = "RO-ME-LU";
+                    playerInfo.WebName = "Training, training, playing, training, playing, training, sleeping, eating good, training, playing, sleeping, eat good, training, drink a lot of water, sleep, train, and don't give interviews";
+                    return;
+                case "Martinelli":
+                    playerInfo.WebName = "Respecting Women";
                     return;
                 case "Mbeumo":
                     playerInfo.WebName = "Kinder Mbeumo";
@@ -251,7 +263,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "Ogbanger";
                     return;
                 case "Pogba":
-                    playerInfo.WebName = "Pau Pogba";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Pau Pogba",
+                        "Deep Lying Social Media Manager"
+                    });
                     return;
                 case "Pulisic":
                     playerInfo.WebName = "NRAmar";
@@ -263,6 +279,9 @@ namespace FPL_SkavenBilicNextFixtureSummary
                         "Penaldo"
                     });
                     return;
+                case "Saka":
+                    playerInfo.WebName = "Paying Taxes";
+                    return;
                 case "Salah":
                     if (DateTime.Now.Month > 11 || DateTime.Now.Month < 3)
                         playerInfo.WebName = "Snow Salah";
@@ -271,11 +290,17 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     if (playerInfo.FirstName == "Andros")
                         playerInfo.WebName = "Clownsend";
                     return;
+                case "van de Beek":
+                    playerInfo.WebName = "On de Bench";
+                    return;
                 case "Vestergaard":
                     playerInfo.WebName = "Bestergaard";
                     return;
                 case "Walcott":
                     playerInfo.WebName = "WalGott";
+                    return;
+                case "Ward-Prowse":
+                    playerInfo.WebName = "Set Piece Specialist";
                     return;
                 case "Werner":
                     playerInfo.WebName = "Ronson";
