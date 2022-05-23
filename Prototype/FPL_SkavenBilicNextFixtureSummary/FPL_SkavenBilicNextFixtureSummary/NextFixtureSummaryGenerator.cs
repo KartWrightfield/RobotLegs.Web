@@ -199,7 +199,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "Banano Silva";
                     return;
                 case "Broja":
-                    playerInfo.WebName = "Armando 'Do you even lift?' Broja";
+                    playerInfo.WebName = "Do you even lift Broja?";
                     return;
                 case "Calvert-Lewin":
                     playerInfo.WebName = "Goalvert-Lewin";
@@ -213,12 +213,21 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Chamberlain":
                     playerInfo.WebName = "Alex Oxlade-Changingroom";
                     return;
+                case "Coady":
+                    playerInfo.WebName = "Connor Codeine";
+                    return;
+                case "Coleman":
+                    playerInfo.WebName = "Shameless Coleman";
+                    return;
                 case "Coutinho":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
                         "It's Fucking Coutinho",
                         "Couptinho"
                     });
+                    return;
+                case "Dawson":
+                    playerInfo.WebName = "Balon D'awson";
                     return;
                 case "de Gea":
                     playerInfo.WebName = "The Gea";
@@ -232,8 +241,15 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Digne":
                     playerInfo.WebName = "Lou Kadine";
                     return;
+                case "Djenepo":
+                    playerInfo.WebName = "Meesah Djenepo";
+                    return;
                 case "Elanga":
-                    playerInfo.WebName = "Rhythm is a Dancer";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Rhythm is a Dancer",
+                        "The Anga"
+                    });
                     return;
                 case "El Ghazi":
                     playerInfo.WebName = "The Warrior";
@@ -248,7 +264,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "Joemez";
                     return;
                 case "Iheanacho":
-                    playerInfo.WebName = "Macho Man";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Macho Man",
+                        "Ian Nacho"
+                    });
                     return;
                 case "Ings":
                     playerInfo.WebName = "Daddy Ings";
@@ -260,11 +280,18 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Jota":
                     playerInfo.WebName = "Yota";
                     return;
+                case "Kane":
+                    playerInfo.WebName = "Sir Harold Kane of England, Duke of Tottenhamshire";
+                    return;
                 case "Krul":
                     playerInfo.WebName = "Cruel";
                     return;
                 case "Lacazette":
-                    playerInfo.WebName = "Lackofthreat";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Lackofthreat",
+                        "Alexandre the Cazette"
+                    });
                     return;
                 case "Laporte":
                     playerInfo.WebName = "Who's Eric?";
@@ -284,6 +311,9 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Minamino":
                     playerInfo.WebName = "Minaminho";
                     return;
+                case "Mitrovic":
+                    playerInfo.WebName = "Shitrobitch";
+                    return;
                 case "Mount":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
@@ -297,20 +327,33 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Olise":
                     playerInfo.WebName = "Für Olise";
                     return;
+                case "Olsen":
+                    playerInfo.WebName = "Robin Nogoalsconcededson";
+                    return;
                 case "Pogba":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
+                        "Deep Lying Social Media Influencer",
                         "Pau Pogba",
-                        "Deep Lying Social Media Manager"
+                        "Salon d'Or",
+                        "Paul Podcast",
+                        "Jogba",
+                        "Barber-to-Barber Midfielder",
+                        "Ball Hogba",
+                        "Paul Cryptogba"
                     });
                     return;
                 case "Pulisic":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
+                        "Captain America",
+                        "EPL Proud Boy",
                         "NRAmar",
-                        "Puligod",
-                        "Captain America"
+                        "Puligod"                        
                     });
+                    return;
+                case "Rodon":
+                    playerInfo.WebName = "Joe Rogan";
                     return;
                 case "Ronaldo":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
@@ -407,9 +450,15 @@ namespace FPL_SkavenBilicNextFixtureSummary
                         case "Arsenal":
                             return "The Arsenal";
                         case "Aston Villa":
-                            return "Stevie G's Claret & Blue Army";
+                            var villa = PickRandomNickname(new List<string>()
+                            {
+                                "Ass Town Village",
+                                "Stevie G's Claret & Blue Army"                                
+                            });
+                            return villa;
                         case "Chelsea":
-                            var chelsea = PickRandomNickname(new List<string>() {
+                            var chelsea = PickRandomNickname(new List<string>() 
+                            {
                                 "The Tucheliban",
                                 "Dynamo London"
                             });
@@ -421,6 +470,8 @@ namespace FPL_SkavenBilicNextFixtureSummary
                             return "Wayne Rooney's Financially Troubled Derby County";
                         case "Everton":
                             return "Frank Lampard's Everton FC";
+                        case "Liverpool":
+                            return "Jürgen Klopp's Mentality Monsters";
                         case "Norwich":
                             return "~Frank Lampard's~ Norwich City";
                         case "Spurs":
