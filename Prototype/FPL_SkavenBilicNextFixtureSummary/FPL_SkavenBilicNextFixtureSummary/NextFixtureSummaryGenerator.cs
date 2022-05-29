@@ -238,6 +238,9 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Dewsbury-Hall":
                     playerInfo.WebName = "Wedding Venue";
                     return;
+                case "Diaz":
+                    playerInfo.WebName = "Pauly D";
+                    return;
                 case "Digne":
                     playerInfo.WebName = "Lou Kadine";
                     return;
