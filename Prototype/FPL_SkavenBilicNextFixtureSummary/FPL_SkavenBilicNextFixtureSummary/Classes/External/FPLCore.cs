@@ -108,7 +108,7 @@ namespace FPLCore
         public TopElementInfo TopElementInfo { get; set; }
 
         [JsonProperty("transfers_made")]
-        public int TransfersMade { get; set; }
+        public int? TransfersMade { get; set; }
 
         [JsonProperty("most_captained")]
         public int? MostCaptained { get; set; }
