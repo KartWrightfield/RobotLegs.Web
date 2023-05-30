@@ -195,7 +195,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     return;
                 case "Alisson":
                     playerInfo.WebName = "Thini Alissoj";
-                    return;                
+                    return;
                 case "Alonso":
                     playerInfo.WebName = "Fucking Murderer";
                     return;
@@ -318,7 +318,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "Emerson Royal with Cheese";
                     return;
                 case "Fernandes":
-                    playerInfo.WebName = "Penandes";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Penandes",
+                        "The Incredible Sulk"
+                    });
                     return;
                 case "Firmino":
                     playerInfo.WebName = "Firminho";
@@ -411,6 +415,9 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Lukaku":
                     playerInfo.WebName = "Training, training, playing, training, playing, training, sleeping, eating good, training, playing, sleeping, eat good, training, drink a lot of water, sleep, train, and don't give interviews";
                     return;
+                case "Mac Allister":
+                    playerInfo.WebName = "Alex is Mac Allister";
+                    return;
                 case "Maguire":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
@@ -419,6 +426,9 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     return;
                 case "Mahrez":
                     playerInfo.WebName = "Mother Rez";
+                    return;
+                case "March":
+                    playerInfo.WebName = "Idus Martiae";
                     return;
                 case "Martinelli":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
@@ -434,6 +444,9 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     return;
                 case "Minamino":
                     playerInfo.WebName = "Minaminho";
+                    return;
+                case "Mitoma":
+                    playerInfo.WebName = "With Grandma";
                     return;
                 case "Mings":
                     playerInfo.WebName = "Mings the Merciless";
@@ -453,7 +466,14 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "Pass-Master Joao Moutinho";
                     return;
                 case "Mudryk":
-                    playerInfo.WebName = "Ukraine Bolt";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "My Name is Mudryk",
+                        "Ukraine Bolt"
+                    });
+                    return;
+                case "Ødegaard":
+                    playerInfo.WebName = ":frog";
                     return;
                 case "Ogbonna":
                     playerInfo.WebName = "Ogbanger";
@@ -610,7 +630,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "William";
                     return;
                 case "Wilson":
-                    playerInfo.WebName = ":wilson:";
+                    playerInfo.WebName = ":volleyball";
                     return;
                 default:
                     return;
