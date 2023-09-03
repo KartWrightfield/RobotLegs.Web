@@ -8,7 +8,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
 {
     class NextFixtureSummaryGenerator
     {
-        const int SlavenBilicLeagueId = 204960;
+        const int SlavenBilicLeagueId = 65200;
 
         GameInfo _MainGameInfo;
         LeagueInfo _LeagueInfo;
@@ -183,6 +183,15 @@ namespace FPL_SkavenBilicNextFixtureSummary
         {
             switch (playerInfo.WebName)
             {
+                case "Adama Traoré":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Fastest Cum in the West",
+                        "Onana Traoré",
+                        "Wankama Wankoré",
+                        "Wanks Onana"
+                    });
+                    return;
                 case "Adams":
                     if (playerInfo.FirstName == "Che")
                         playerInfo.WebName = "Che Guevadams";
@@ -212,11 +221,22 @@ namespace FPL_SkavenBilicNextFixtureSummary
                         "Marsh Melo"
                     });
                     return;
+                case "Barnes":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Harvey Fucking Barnes"
+                    });
+                    return;
                 case "Bernardo":
                     playerInfo.WebName = "Banano Silva";
                     return;
                 case "Botman":
-                    playerInfo.WebName = "Sven Bossman";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Batman",
+                        "Bottleman",
+                        "Sven Bossman"
+                    });
                     return;
                 case "Brobbey":
                     playerInfo.WebName = "Mr Brobbey";
@@ -240,7 +260,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "Cantpassemiro";
                     return;
                 case "Cash":
-                    playerInfo.WebName = "Wonga";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Mateusz Kashinski",
+                        "Matty Cashback",
+                        "Wonga"
+                    });
                     return;
                 case "Chamberlain":
                     playerInfo.WebName = "Alex Oxlade-Changingroom";
@@ -267,10 +292,17 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Daka":
                     playerInfo.WebName = "DakkaDakka";
                     return;
+                case "Dasilva":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Josh the Silver"
+                    });
+                    return;
                 case "Darwin":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
                         "Agent of Chaos",
+                        "Bollock Yoghurt",
                         "Galapagos",
                         "On the Origin of Species",
                         "The Theory of Goalvolution"
@@ -317,7 +349,19 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Emerson":
                     playerInfo.WebName = "Emerson Royal with Cheese";
                     return;
-                case "Fernandes":
+                case "Eze":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Easy"
+                    });
+                    return;
+                case "Ferguson":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Evan Almighty"
+                    });
+                    return;
+                case "B.Fernandes":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
                         "Penandes",
@@ -326,6 +370,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     return;
                 case "Firmino":
                     playerInfo.WebName = "Firminho";
+                    return;
+                case "Foden":
+                    playerInfo.WebName = "Filth Oden";
+                    return;
+                case "Garnacho":
+                    playerInfo.WebName = "Garnacho Nacho Man";
                     return;
                 case "Gomez":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
@@ -343,6 +393,13 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     return;
                 case "Groß":
                     playerInfo.WebName = ":gross";
+                    return;
+                case "Gusto":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "HelloFresh",
+                        "Mucho Gusto"
+                    });
                     return;
                 case "Haaland":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
@@ -366,6 +423,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                         playerInfo.WebName = "NFTeece James";
                     if (playerInfo.FirstName == "Dan")
                         playerInfo.WebName = "Dan German";
+                    return;
+                case "João Pedro":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "João Penis"
+                    });
                     return;
                 case "Jota":
                     playerInfo.WebName = "Yota";
@@ -409,6 +472,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Lingard":
                     playerInfo.WebName = "Lingod";
                     return;
+                case "Livramento":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Livramento Laughramento Lovramento"
+                    });
+                    return;
                 case "Luis Díaz":
                     playerInfo.WebName = "Pauly D";
                     return;
@@ -416,7 +485,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "Training, training, playing, training, playing, training, sleeping, eating good, training, playing, sleeping, eat good, training, drink a lot of water, sleep, train, and don't give interviews";
                     return;
                 case "Mac Allister":
-                    playerInfo.WebName = "Alex is Mac Allister";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Alex is Mac Allister",
+                        "Max Allister"
+                    });
                     return;
                 case "Maguire":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
@@ -434,6 +507,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
                         "Mother Tinelli"
+                    });                    
+                    return;
+                case "Martinez":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Bantinez"
                     });                    
                     return;
                 case "Mbeumo":
@@ -472,6 +551,18 @@ namespace FPL_SkavenBilicNextFixtureSummary
                         "Ukraine Bolt"
                     });
                     return;
+                case "Mubama":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Thanks Mubama"
+                    });
+                    return;
+                case "N.Jackson":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Micky Jackson"
+                    });
+                    return;
                 case "Ødegaard":
                     playerInfo.WebName = ":frog";
                     return;
@@ -489,10 +580,22 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     });
                     return;
                 case "Onana":
-                    playerInfo.WebName = "Hoochie mama show Onana";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        ":notes _Onanananana, it's the motherfucking D. O. Double G_ :notes",
+                        "Hoochie mama show Onana",
+                        "Oh no-na",
+                        "Thanks Onana"
+                    });
                     return;
                 case "Partey":
                     playerInfo.WebName = "S-Club Partey";
+                    return;
+                case "Pau":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Paul Torres"
+                    });
                     return;
                 case "Perišić":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
@@ -514,7 +617,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
                         "Paul Cryptogba"
                     });
                     return;
-                case "Porro":
+                case "Pedro Porro":
                     playerInfo.WebName = "Pedro Porno";
                     return;
                 case "Pulisic":
@@ -534,6 +637,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     return;
                 case "Rodon":
                     playerInfo.WebName = "Joe Rogan";
+                    return;
+                case "Rodrigo":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Rodney"
+                    });
                     return;
                 case "Romeo":
                     playerInfo.WebName = "Romeo & Juliet";
@@ -559,7 +668,8 @@ namespace FPL_SkavenBilicNextFixtureSummary
                         playerInfo.WebName = PickRandomNickname(new List<string>()
                         {
                             "Flavour Town",
-                            "Slag"
+                            "Slag",
+                            "The Ultimate Predator"
                         });                    
                     return;
                 case "Saliba":
@@ -579,6 +689,13 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     return;
                 case "Sterling":
                     playerInfo.WebName = "Sterling-PreOrder";
+                    return;
+                case "Szoboszlai":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Dommy Schlobbers",
+                        "The Schlobmeister"
+                    });
                     return;
                 case "Tielemans":
                     playerInfo.WebName = "Tieletubby";
@@ -648,17 +765,17 @@ namespace FPL_SkavenBilicNextFixtureSummary
         {
             switch (id)
             {
-                case 710741:
+                case 349242:
                     return "Felix";                
-                case 2352608:
+                case 2937916:
                     return "Higgins";
-                case 5859854:
+                case 3256550:
                     return "Joe";
-                case 1983521:
+                case 4115929:
                     return "Meme";
-                case 1114406:
+                case 563456:
                     return "Nodge";
-                case 963153:
+                case 1075495:
                     return "Sam";                
             }
 
@@ -674,7 +791,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     switch (team.Name)
                     {
                         case "Arsenal":
-                            return "The Arsenal";
+                            var arsenal = PickRandomNickname(new List<string>()
+                            {
+                                "Arse-anal",
+                                "The Arsenal"
+                            });
+                            return arsenal;
                         case "Aston Villa":
                             var villa = PickRandomNickname(new List<string>()
                             {
@@ -701,6 +823,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                             return "~Frank Lampard's~ Everton FC";
                         case "Liverpool":
                             return "Jürgen Klopp's Mentality Monsters";
+                        case "Man City":
+                            return "Wankbastards Shitty";
+                        case "Man Utd":
+                            return "aan u";
+                        case "Newcastle":
+                                return "Poocastle";
                         case "Norwich":
                             return "~Frank Lampard's~ Norwich City";
                         case "Southampton":
@@ -709,6 +837,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
                             var spurs = PickRandomNickname(new List<string>()
                             {
                                 "Lads, it's Topspur",
+                                "The Premier League's Grandest Punchline",
                                 "Tinpottenham"
                             });
                             return spurs;
@@ -729,7 +858,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
 
             for (int i = 0; i < _Fixtures.Length; i++)
             {
-                if (_Fixtures[i].KickoffTime > DateTime.Now.AddMinutes(0))
+                if (_Fixtures[i].KickoffTime > DateTime.Now.AddMinutes(360))
                 { 
                     _NextFixtures.Add(_Fixtures[i]);
 
