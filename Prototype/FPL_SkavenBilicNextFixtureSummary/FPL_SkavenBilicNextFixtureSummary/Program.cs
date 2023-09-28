@@ -10,7 +10,15 @@ namespace FPL_SkavenBilicNextFixtureSummary
         {
             NextFixtureSummaryGenerator generator = new NextFixtureSummaryGenerator();
 
-            generator.Start();
+            try
+            {
+                generator.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.ReadLine();
+            }
         }        
     }
 }

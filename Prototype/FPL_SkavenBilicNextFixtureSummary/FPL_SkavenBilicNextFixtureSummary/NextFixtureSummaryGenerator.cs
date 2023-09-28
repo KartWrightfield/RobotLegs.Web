@@ -387,7 +387,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Gordon":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
-                        "Diners, Drive-Ins & Dives",
+                        "_Diners, Drive-Ins & Dives_",
                         "Wankony Dive-don"
                     });
                     return;
@@ -432,6 +432,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     return;
                 case "Jota":
                     playerInfo.WebName = "Yota";
+                    return;
+                case "Kaboré":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "When the moon hits the sky like a big pizza pie... that's Kaboré"
+                    });
                     return;
                 case "Kane":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
@@ -723,6 +729,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "van de Beek":
                     playerInfo.WebName = "Donny On de Beench";
                     return;
+                case "Virgil":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Virgil van Shite"
+                    });
+                    return;
                 case "Varane":
                     playerInfo.WebName = "Barbara Ann";
                     return;
@@ -858,7 +870,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
 
             for (int i = 0; i < _Fixtures.Length; i++)
             {
-                if (_Fixtures[i].KickoffTime > DateTime.Now.AddMinutes(360))
+                if (_Fixtures[i].KickoffTime > DateTime.Now.AddMinutes(0))
                 { 
                     _NextFixtures.Add(_Fixtures[i]);
 
