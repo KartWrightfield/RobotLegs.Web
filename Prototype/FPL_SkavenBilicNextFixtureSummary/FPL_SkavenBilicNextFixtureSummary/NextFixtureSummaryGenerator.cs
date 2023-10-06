@@ -408,6 +408,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                         "The Terminator"
                     });
                     return;
+                case "Havertz":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Hav-some of that-ertz"
+                    });
+                    return;
                 case "Iheanacho":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
@@ -838,7 +844,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                         case "Man City":
                             return "Wankbastards Shitty";
                         case "Man Utd":
-                            return "aan u";
+                            return PickRandomNickname(new List<string>()
+                            {
+                                "aan u",
+                                "UK Gold FC"
+                            });
                         case "Newcastle":
                                 return "Poocastle";
                         case "Norwich":
