@@ -335,6 +335,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Djenepo":
                     playerInfo.WebName = "Meesah Djenepo";
                     return;
+                case "Dunk":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Dairylea Dunkers"
+                    });
+                    return;
                 case "Elanga":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
@@ -404,6 +410,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Haaland":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
+                        "Aryan Heskey",
                         "Hahahaaland",
                         "The Terminator"
                     });
@@ -501,6 +508,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     {
                         "Alex is Mac Allister",
                         "Max Allister"
+                    });
+                    return;
+                case "Maddison":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Mad Laddison"
                     });
                     return;
                 case "Maguire":
@@ -710,7 +723,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     });
                     return;
                 case "Tielemans":
-                    playerInfo.WebName = "Tieletubby";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Tieletubby",
+                        "Yourit Mealdealemans"
+                    });
                     return;
                 case "Toney":
                     playerInfo.WebName = "I've an Toney";
@@ -842,7 +859,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                         case "Liverpool":
                             return "Jürgen Klopp's Mentality Monsters";
                         case "Man City":
-                            return "Wankbastards Shitty";
+                            return PickRandomNickname(new List<string>()
+                            {
+                                "United Arab Emirates",
+                                "Wankbastards Shitty"
+                            });
                         case "Man Utd":
                             return PickRandomNickname(new List<string>()
                             {
@@ -850,7 +871,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                                 "UK Gold FC"
                             });
                         case "Newcastle":
-                                return "Poocastle";
+                            return PickRandomNickname(new List<string>()
+                            {
+                                "Poocastle",
+                                "Saudi Arabia"
+                            });
                         case "Norwich":
                             return "~Frank Lampard's~ Norwich City";
                         case "Southampton":

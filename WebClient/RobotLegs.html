@@ -1,11 +1,1429 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="RobotLegs.css">
-    <title>Document</title>
+    <title>Robot Legs</title>
 </head>
 <body>
-    
+    <nav id="mainNavbar" class="navbar navbar-dark bg-dark navbar-expand-md py-0 fixed-top">
+        <a href="#" class="navbar-brand">FPLBot</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navLinks">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Brighton vs Liverpool: player priority -->
+    <section class="container mb-4">
+        <div class="card bg-dark text-white">
+            <div class="card-header">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t36.png" class="img-fluid">Brighton</h2>
+                            </div>
+                        </div>
+                        <div class="col-2 text-center">
+                            <span class="align-bottom">
+                                <h2>vs.</h2>
+                            </span>
+                        </div>
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t14.png" class="img-fluid">Jürgen Klopp's Mentality Monsters</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="card-body">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_36-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>With Grandma</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Nodge, Higgins</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_36-66.png" class="img-fluid d-block mx-auto">
+                                            <h5">Estupiñan</h5>                                            
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Nodge (b), Felix (b)</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_36-66.png" class="img-fluid d-block mx-auto">
+                                            <h5">Lamprey</h5>                                            
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Sam, Higgins (b)</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_36-66.png" class="img-fluid d-block mx-auto">
+                                            <h5">Evan Almighty</h5>                                            
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Joe (b)</p>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="col-2">
+
+                        </div>
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_14-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>The Ultimate Predator</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Sam (v), Higgins, Joe (v), Felix, (v)</p>
+                                        </div>
+                                    </div> 
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_14-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Agent of Chaos</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Joe</p>
+                                        </div>
+                                    </div>                                    
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    <!-- West Ham vs Newcastle: player priority -->
+    <section class="container mb-4">
+        <div class="card bg-dark text-white">
+            <div class="card-header">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t21.png" class="img-fluid">Did You Just Say 'West Ham'?</h2>
+                            </div>
+                        </div>
+                        <div class="col-2 text-center">
+                            <span class="align-bottom">
+                                <h2>vs.</h2>
+                            </span>
+                        </div>
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t4.png" class="img-fluid">Poocastle</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="card-body">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_21-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Set Piece Specialist</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Sam</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_21_1-66.png" class="img-fluid d-block mx-auto">
+                                            <h5">Areola</h5>                                            
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Higgins (b), Joe (b), Felix (b)</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_21-66.png" class="img-fluid d-block mx-auto">
+                                            <h5">Kehrer</h5>                                            
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Meme (b)</p>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="col-2">
+
+                        </div>
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_4-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Strippier</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Nodge, Higgins</p>
+                                        </div>
+                                    </div> 
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_4-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Isak</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Nodge</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_4-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Cher</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Higgins</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_4-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Diners, Drive-Ins & Dives</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Higgins (b), Joe (b), Felix (b)</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_4_1-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Pope</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Joe</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_4-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Bruno G.</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Joe</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_4-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Sven Bossman</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Felix</p>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    <!-- Wolves vs Villa: player priority -->
+    <section class="container mb-4">
+        <div class="card bg-dark text-white">
+            <div class="card-header">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t39.png" class="img-fluid">Wolves</h2>
+                            </div>
+                        </div>
+                        <div class="col-2 text-center">
+                            <span class="align-bottom">
+                                <h2>vs.</h2>
+                            </span>
+                        </div>
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t7.png" class="img-fluid">Real Villa</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="card-body">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_39-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Neto</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Sam (b)</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_39-66.png" class="img-fluid d-block mx-auto">
+                                            <h5">Hee Chan</h5>                                            
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Higgins</p>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="col-2">
+
+                        </div>
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Mateusz Kashinski</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Nodge, Sam, Felix</p>
+                                        </div>
+                                    </div> 
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Paul Torres</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Nodge</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Diaby</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Sam, Felix</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Watkins</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Sam, Felix</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Lou Kadine</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Joe</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Bailey</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Meme</p>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    <!-- Arsenal vs Man City: player priority -->
+    <section class="container mb-4">
+        <div class="card bg-dark text-white">
+            <div class="card-header">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t3.png" class="img-fluid">Arse-anal</h2>
+                            </div>
+                        </div>
+                        <div class="col-2 text-center">
+                            <span class="align-bottom">
+                                <h2>vs.</h2>
+                            </span>
+                        </div>
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t43.png" class="img-fluid">Wankbastards Shitty</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="card-body">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_3-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>🥗</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Nodge (b)</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_3-66.png" class="img-fluid d-block mx-auto">
+                                            <h5">Hav-some of that-ertz</h5>                                            
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Joe, Meme</p>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="col-2">
+
+                        </div>
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_43-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Hahahaaland</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">
+                                                <span id="first">Nodge (c)</span>, 
+                                                <span id="second">Sam</span>, 
+                                                <span id="third">Higgins (v)</span>, 
+                                                <span id="fourth">Joe (c)</span> 
+                                                <span id="fifth">Felix (c)</span> 
+                                            </p>
+                                        </div>
+                                    </div> 
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_43-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>J. Alvarez</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Sam, Higgins</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <img src="images/shirt_43-66.png" class="img-fluid d-block mx-auto">
+                                            <h5>Filth Oden</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-center">Joe</p>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brighton vs Liverpool: manager priority -->
+    <section class="container mb-4">
+        <div class="card bg-dark text-white">
+            <div class="card-header">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t36.png" class="img-fluid">Brighton</h2>
+                            </div>
+                        </div>
+                        <div class="col-2 text-center">
+                            <span class="align-bottom">
+                                <h2>vs.</h2>
+                            </span>
+                        </div>
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t14.png" class="img-fluid">Jürgen Klopp's Mentality Monsters</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="card-body">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center d-inline-block align-bottom">
+                                            <h5 class="">Nodge</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <img src="images/shirt_36-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="images/shirt_36-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p class="text-center">With Grandma</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="text-center">Estupiñan (b)</p>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Sam</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_36-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                                                               
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Lamprey</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center d-inline-block align-bottom">
+                                            <h5 class="">Higgins</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <img src="images/shirt_36-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="images/shirt_36-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p class="text-center">With Grandma</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="text-center">Lamprey (b)</p>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Joe</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_36-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                                                               
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Evan Almighty (b)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Felix</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_36-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                                                               
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Estupiñan (b)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Meme</h5>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="col-2">
+
+                        </div>
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Nodge</h5>
+                                        </div>                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Sam</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_14-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                                                               
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">The Ultimate Predator (v)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Higgins</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_14-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                                                               
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">The Ultimate Predator</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Joe</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <img src="images/shirt_14-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="images/shirt_14-66.png" class="img-fluid d-block mx-auto">
+                                                </div>   
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p class="text-center">The Ultimate Predator (v)</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="text-center">Agent of Chaos</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Felix</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_14-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                                                               
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">The Ultimate Predator (v)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Meme</h5>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    <!-- West Ham vs Newcastle: manager priority -->
+    <section class="container mb-4">
+        <div class="card bg-dark text-white">
+            <div class="card-header">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t21.png" class="img-fluid">Did You Just Say 'West Ham'?</h2>
+                            </div>
+                        </div>
+                        <div class="col-2 text-center">
+                            <span class="align-bottom">
+                                <h2>vs.</h2>
+                            </span>
+                        </div>
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t4.png" class="img-fluid">Poocastle</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="card-body">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center d-inline-block align-bottom">
+                                            <h5 class="">Nodge</h5>
+                                        </div>                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Sam</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_21-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                                                               
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Set Piece Specialist</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center d-inline-block align-bottom">
+                                            <h5 class="">Higgins</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_21_1-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                              
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Areola (b)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Joe</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_21_1-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                              
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Areola (b)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Felix</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_21_1-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                              
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Areola (b)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Meme</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_21-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                              
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Kehrer (b)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="col-2">
+
+                        </div>
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Nodge</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <img src="images/shirt_4-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="images/shirt_4-66.png" class="img-fluid d-block mx-auto">
+                                                </div>   
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p class="text-center">Strippier</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="text-center">Isak</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Sam</h5>
+                                        </div>                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Higgins</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <img src="images/shirt_4-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="images/shirt_4-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="images/shirt_4-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <p class="text-center">Cher</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="text-center">Strippier</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="text-center">Diners, Drive-Ins & Dives (b)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Joe</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <img src="images/shirt_4_1-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="images/shirt_4-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="images/shirt_4-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <p class="text-center">Pope</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="text-center">Bruno G.</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="text-center">Diners, Drive-Ins & Dives (b)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Felix</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <img src="images/shirt_4-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="images/shirt_4-66.png" class="img-fluid d-block mx-auto">
+                                                </div>   
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p class="text-center">Sven Bossman (b)</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="text-center">Diners, Drive-Ins & Dives (b)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Meme</h5>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    <!-- Wolves vs Villa: manager priority -->
+    <section class="container mb-4">
+        <div class="card bg-dark text-white">
+            <div class="card-header">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t39.png" class="img-fluid">Wolves</h2>
+                            </div>
+                        </div>
+                        <div class="col-2 text-center">
+                            <span class="align-bottom">
+                                <h2>vs.</h2>
+                            </span>
+                        </div>
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t7.png" class="img-fluid">Real Villa</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="card-body">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center d-inline-block align-bottom">
+                                            <h5 class="">Nodge</h5>
+                                        </div>                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Sam</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_39-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                                                               
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Neto (b)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center d-inline-block align-bottom">
+                                            <h5 class="">Higgins</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_39-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                                                               
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Hee Chan</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Joe</h5>
+                                        </div>                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Felix</h5>
+                                        </div>                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Meme</h5>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="col-2">
+
+                        </div>
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Nodge</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                                </div>   
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p class="text-center">Mateusz Kashinski</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="text-center">Paul Torres</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Sam</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                                </div> 
+                                                <div class="col-4">
+                                                    <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <p class="text-center">Mateusz Kashinski</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="text-center">Diaby</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="text-center">Watkins</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Higgins</h5>
+                                        </div>                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Joe</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                 
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Lou Kadine</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Felix</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                                </div> 
+                                                <div class="col-4">
+                                                    <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <p class="text-center">Mateusz Kashinski</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="text-center">Diaby</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="text-center">Watkins</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Meme</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_7-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                 
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Bailey</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    <!-- Arsenal vs Man City: manager priority -->
+    <section class="container mb-4">
+        <div class="card bg-dark text-white">
+            <div class="card-header">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t3.png" class="img-fluid">Arse-anal</h2>
+                            </div>
+                        </div>
+                        <div class="col-2 text-center">
+                            <span class="align-bottom">
+                                <h2>vs.</h2>
+                            </span>
+                        </div>
+                        <div class="col-5">
+                            <div class="text-center">                                
+                                <h2><img src="images/t43.png" class="img-fluid">Wankbastards Shitty</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="card-body">
+                <section class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center d-inline-block align-bottom">
+                                            <h5 class="">Nodge</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_3-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                              
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">🥗</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Sam</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center d-inline-block align-bottom">
+                                            <h5 class="">Higgins</h5>
+                                        </div>                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Joe</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_3-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                                                               
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Hav-some of that-ertz</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Felix</h5>
+                                        </div>                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Meme</h5>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_3-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                                                               
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Hav-some of that-ertz</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="col-2">
+
+                        </div>
+                        <div class="col-5">
+                            <section class="container">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Nodge</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_43-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                                                               
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Hahahaaland (c)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Sam</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <img src="images/shirt_43-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="images/shirt_43-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p class="text-center">J. Alvarez</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="text-center">Hahahaaland</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Higgins</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <img src="images/shirt_43-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="images/shirt_43-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p class="text-center">J. Alvarez</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="text-center">Hahahaaland (v)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Joe</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <img src="images/shirt_43-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="images/shirt_43-66.png" class="img-fluid d-block mx-auto">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p class="text-center">Filth Oden</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="text-center">Hahahaaland (c)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Felix</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="images/shirt_43-66.png" class="img-fluid d-block mx-auto">
+                                                </div>                                                                                               
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <p class="text-center">Hahahaaland (c)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-center">
+                                            <h5>Meme</h5>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="RobotLegs.js"></script>
 </body>
