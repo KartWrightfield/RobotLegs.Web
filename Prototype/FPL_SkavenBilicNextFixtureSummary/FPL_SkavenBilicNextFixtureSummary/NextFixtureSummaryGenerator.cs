@@ -9,6 +9,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
     class NextFixtureSummaryGenerator
     {
         const int SlavenBilicLeagueId = 65200;
+        private const int KickOffOffset = 0;
 
         GameInfo _MainGameInfo;
         LeagueInfo _LeagueInfo;
@@ -211,6 +212,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Antonio":
                     playerInfo.WebName = "The Mage";
                     return;
+                case "Areola":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "'Arry Ola"
+                    });
+                    return;
                 case "Aribo":
                     playerInfo.WebName = "Starmix";
                     return;
@@ -219,6 +226,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     {
                         "King Arthur",
                         "Marsh Melo"
+                    });
+                    return;
+                case "Bailey":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Leon Goaley"
                     });
                     return;
                 case "Barnes":
@@ -289,6 +302,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Cucurella":
                     playerInfo.WebName = "Coca-Cola";
                     return;
+                case "Cunha":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Cunha Matata"
+                    });
+                    return;
                 case "Daka":
                     playerInfo.WebName = "DakkaDakka";
                     return;
@@ -304,6 +323,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
                         "Agent of Chaos",
                         "Bollock Yoghurt",
                         "Galapagos",
+                        "Mr Sitter",
                         "On the Origin of Species",
                         "The Theory of Goalvolution"
                     });
@@ -334,6 +354,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     return;
                 case "Djenepo":
                     playerInfo.WebName = "Meesah Djenepo";
+                    return;
+                case "Doku":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Cum Thief"
+                    });
                     return;
                 case "Dunk":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
@@ -412,6 +438,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     {
                         "Aryan Heskey",
                         "Hahahaaland",
+                        "The Haalander",
                         "The Terminator"
                     });
                     return;
@@ -419,6 +446,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
                         "Hav-some of that-ertz"
+                    });
+                    return;
+                case "Hee Chan":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "'The Korean One' - _Pep Guardiola_"
                     });
                     return;
                 case "Iheanacho":
@@ -497,6 +530,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                         "Livramento Laughramento Lovramento"
                     });
                     return;
+                case "Longstaff":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "al-Ramh"
+                    });
+                    return;
                 case "Luis Díaz":
                     playerInfo.WebName = "Pauly D";
                     return;
@@ -545,6 +584,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     return;
                 case "Mee":
                     playerInfo.WebName = "Bahn Mi";
+                    return;
+                case "Miley":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Hannah Montana"
+                    });
                     return;
                 case "Minamino":
                     playerInfo.WebName = "Minaminho";
@@ -645,6 +690,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Pedro Porro":
                     playerInfo.WebName = "Pedro Porno";
                     return;
+                case "Pope":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "The Pope"                        
+                    });
+                    return;
                 case "Pulisic":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
@@ -708,6 +759,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     return;
                 case "Semedo":
                     playerInfo.WebName = "Nelson's Emedo";
+                    return;
+                case "Semenyo":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Cum"
+                    });
                     return;
                 case "Smith Rowe":
                     playerInfo.WebName = "Smith-Row Z";
@@ -783,6 +840,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     return;
                 case "Wilson":
                     playerInfo.WebName = ":volleyball";
+                    return;
+                case "Zaniolo":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Cornholio"
+                    });
                     return;
                 default:
                     return;
@@ -905,7 +968,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
 
             for (int i = 0; i < _Fixtures.Length; i++)
             {
-                if (_Fixtures[i].KickoffTime > DateTime.Now.AddMinutes(0))
+                if (_Fixtures[i].KickoffTime > DateTime.Now.AddMinutes(KickOffOffset))
                 { 
                     _NextFixtures.Add(_Fixtures[i]);
 
