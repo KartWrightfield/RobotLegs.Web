@@ -17,8 +17,8 @@ const seedData = [
         nicknames: ["Cunha Matata"]
     },
     {
-        name: 'Doku',
-        nicknames: ['Cum Thief']
+        name: 'Jesus',
+        nicknames: ['xJesus']
     },
     {
         name: 'Haaland',
