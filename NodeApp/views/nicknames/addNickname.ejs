@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Nickname</title>
+    <title>Add Nickname</title>
 </head>
 <body>
-    <h1>Add a New Player & Nickname</h1>
-    <form action="/nicknames" method="POST">
-        <input type="text" name="name" placeholder="Player Name">
+    <h1>New Nickname</h1>
+    <form action="/nicknames/<%= id %>?_method=PATCH" method="POST">
         <input type="text" name="nickname" placeholder="Nickname">
         <button>Submit</button>
     </form>
-    <a href="/nicknames">Cancel</a>
+    <a href="/nicknames/<%= id %>">Cancel</a>
 </body>
 </html>

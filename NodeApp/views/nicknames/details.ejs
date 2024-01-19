@@ -13,6 +13,10 @@
         <% }%>
     </ul>
 
-    <a href="/nicknames">Back</a>
+    <a href="/nicknames/<%= nickname._id %>/addNickname">Add Nickname</a>
+    <a href="/nicknames" style="display: block;">Back</a>
+    <form action="/nicknames/<%= nickname._id %>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
 </body>
 </html>
