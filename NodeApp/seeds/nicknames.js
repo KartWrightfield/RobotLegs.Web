@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Nickname = require('./models/nickname');
+const Nickname = require('../models/nickname');
 
 mongoose.connect('mongodb://localhost:27017/robotLegs')
     .then(() => {

@@ -1,0 +1,44 @@
+body {
+    background: linear-gradient(to bottom right, #24292e, #4e288b) fixed;
+    font-family: 'Chakra Petch', -apple-system, sans-serif;
+    padding-top: 70px;
+}
+
+#card {
+    font-weight: 800;
+}
+
+#mainNavbar .navbar-brand {
+    color: #9f7be1;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#mainNavbar .nav-link {
+    color: #fff;
+    font-weight: 300;
+}
+
+#mainNavbar .nav-link:hover {
+    color: #9f7be1;
+}
+
+#first {
+    color:#E6CC80
+}
+
+#second {
+    color:#ff8000
+}
+
+#third {
+    color:#a335ee;
+}
+
+#fourth {
+    color:#0070FF
+}
+
+#fifth {
+    color:#1eff00
+}

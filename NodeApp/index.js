@@ -4,6 +4,13 @@ const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 
+const mainGameInfo = require('./seeds/maingameinfo.js');
+const leagueInfo = require('./seeds/leagueinfo.js');
+const fixtures = require('./seeds/fixtures.js');
+
+const week1Picks = require('./seeds/week1picks.js');
+const week1Transfers = require('./seeds/week1transfers.js');
+
 const Nickname = require('./models/nickname');
 
 mongoose.connect('mongodb://localhost:27017/robotLegs')
@@ -20,6 +27,10 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
+
+app.get('/', (req, res) => {
+    res.render('home', { mainGameInfo })
+});
 
 app.get('/nicknames', async (_req, res) => {
     const nicknames = await Nickname.find({});

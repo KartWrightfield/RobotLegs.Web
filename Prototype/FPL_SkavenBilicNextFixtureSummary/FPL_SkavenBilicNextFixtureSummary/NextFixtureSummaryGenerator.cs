@@ -751,7 +751,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "Trashford";
                     return;
                 case "Richarlison":
-                    playerInfo.WebName = "The Pigeon";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Shitcharlison",
+                        "The Pigeon"
+                    });
                     return;
                 case "Rodon":
                     playerInfo.WebName = "Joe Rogan";
@@ -829,7 +833,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     });
                     return;
                 case "Toney":
-                    playerInfo.WebName = "I've an Toney";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Big Dog's Back",
+                        "I've an Toney"
+                    });
                     return;
                 case "Townsend":
                     if (playerInfo.FirstName == "Andros")
@@ -892,7 +900,8 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Wood":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
-                        "The Ghost of Christmas Past"
+                        "The Ghost of Christmas Past",
+                        "Woodigol"
                     });
                     return;
                 case "Zaniolo":
