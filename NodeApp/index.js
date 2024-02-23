@@ -29,7 +29,11 @@ app.use(methodOverride('_method'));
 
 
 app.get('/', (req, res) => {
-    res.render('home', { mainGameInfo })
+    var gameweekFixtures = fixtures.filter(function (fix) {
+        return fix.event === 1;
+    });
+
+    res.render('home', { mainGameInfo, gameweekFixtures, leagueInfo })
 });
 
 app.get('/nicknames', async (_req, res) => {

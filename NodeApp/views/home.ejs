@@ -32,10 +32,88 @@
         </div>
     </nav>
 
-    <h1>Gameweek Fixture Summary</h1>
+    <h1 style="margin-top: 45px;">Gameweek Fixture Summary</h1>
     <h2><%= mainGameInfo.events[0].name %></h2>
 
+    <% for (let fixture of gameweekFixtures) {%>
+        <section class="container mb-4">
+            <div class="card bg-dark text-white">
+                <div class ="card-header">
+                    <section class="container">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="text-center">
+                                    <h2><%= fixture.team_h %></h2>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <span class="align-bottom">
+                                    <h2>vs.</h2>
+                                </span>
+                            </div>
+                            <div class="col-5">
+                                <div class="text-center">
+                                    <h2><%= fixture.team_a %></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
 
+                <div class="card-body">
+                    <section class="container">
+                        <div class="row">
+                            <div class="col-5">
+                                <section class="container">
+                                    <ul>
+                                        <% for (let manager of leagueInfo.standings.results) {%>                                        
+                                            <div class="row">
+                                                <div class="col-4 text-center d-inline-block align-bottom">
+                                                    <h5><%= manager.player_name %></h5>
+                                                </div>
+
+                                                <div class="col-8">
+                                                    <!-- Loop through home team picks for manager -->
+                                                    <div class="row">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% }%>
+                                    </ul>
+                                </section>
+                            </div>
+
+                            <div class="col-2">
+
+                            </div>
+
+                            <div class="col-5">
+                                <section class="container">
+                                    <ul>
+                                        <% for (let manager of leagueInfo.standings.results) {%>                                        
+                                            <div class="row">
+                                                <div class="col-4 text-center d-inline-block align-bottom">
+                                                    <h5><%= manager.player_name %></h5>
+                                                </div>
+
+                                                <div class="col-8">
+                                                    <!-- Loop through away team picks for manager -->
+                                                    <div class="row">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% }%>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    <% }%>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

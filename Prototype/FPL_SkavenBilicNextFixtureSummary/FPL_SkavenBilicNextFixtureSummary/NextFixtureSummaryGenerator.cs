@@ -268,7 +268,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "Father Dick Byrne";
                     return;
                 case "Calvert-Lewin":
-                    playerInfo.WebName = "Goalvert-Lewin";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Calvin Lewis",
+                        "Goalvert-Lewin"
+                    });
                     return;
                 case "Cancelo":
                     playerInfo.WebName = "Cancelo Culture";
@@ -358,6 +362,9 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     return;
                 case "Digne":
                     playerInfo.WebName = "Lou Kadine";
+                    return;
+                case "Diogo J.":
+                    playerInfo.WebName = "Yota";
                     return;
                 case "Djenepo":
                     playerInfo.WebName = "Meesah Djenepo";
@@ -691,6 +698,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Palmer":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
+                        "Keke Palmer is wearing My Jeans",
                         "Who Killed Laura Palmer?"
                     });
                     return;
