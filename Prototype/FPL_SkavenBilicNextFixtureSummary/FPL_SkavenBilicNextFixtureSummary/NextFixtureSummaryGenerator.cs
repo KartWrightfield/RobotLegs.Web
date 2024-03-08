@@ -986,6 +986,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
                         case "Chelsea":
                             var chelsea = PickRandomNickname(new List<string>() 
                             {
+                                "Billion Pound Bottlejobs",
                                 "FC London Cowboys"
                             });
                             return chelsea;

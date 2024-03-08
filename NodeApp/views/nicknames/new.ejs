@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Nickname</title>
-</head>
-<body>
-    <h1>Add a New Player & Nickname</h1>
-    <form action="/nicknames" method="POST">
-        <input type="text" name="name" placeholder="Player Name">
-        <input type="text" name="nickname" placeholder="Nickname">
-        <button>Submit</button>
-    </form>
-    <a href="/nicknames">Cancel</a>
-</body>
-</html>
+<% layout('/layouts/boilerplate')%>
+
+<div class="row">
+    <h1 class="text-center">New Player Nickname</h1>
+    <div class="col-6 offset-3">
+        <form action="/nicknames" method="POST">
+            <div class="mb-3">
+                <input class="form-control" type="text" name="name" placeholder="Player Name">
+            </div>
+            <div class="mb-3">
+                <input class="form-control" type="text" name="nickname" placeholder="Nickname">            
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Submit</button>
+            </div>
+        </form>
+        <a href="/nicknames">Cancel</a>
+    </div>
+</div>

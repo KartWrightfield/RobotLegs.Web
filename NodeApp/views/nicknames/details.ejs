@@ -1,22 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= nickname.name %></title>
-</head>
-<body>
-    <h1><%= nickname.name %></h1>
-    <ul>
-        <% for(i = 0; i < nickname.nicknames.length; i++) { %>
-            <li><%= nickname.nicknames[i] %></li>
-        <% }%>
-    </ul>
+<% layout('/layouts/boilerplate')%>
 
-    <a href="/nicknames/<%= nickname._id %>/addNickname">Add Nickname</a>
-    <a href="/nicknames" style="display: block;">Back</a>
-    <form action="/nicknames/<%= nickname._id %>?_method=DELETE" method="POST">
-        <button>Delete</button>
-    </form>
-</body>
-</html>
+<div class="row">
+    <h1 class="text-center"><%= nickname.name %></h1>
+    <div class="col-6 offset-3">
+        <ul class="list-group">
+            <% for(i = 0; i < nickname.nicknames.length; i++) { %>
+                <li class="list-group-item bg-dark text-light border-secondary"><%= nickname.nicknames[i] %></li>
+            <% }%>
+        </ul>
+
+        <a href="/nicknames/<%= nickname._id %>/addNickname">Add Nickname</a>
+        <a href="/nicknames" style="display: block;">Back</a>
+        <form action="/nicknames/<%= nickname._id %>?_method=DELETE" method="POST">
+            <button>Delete</button>
+        </form>
+    </div>
+</div>
