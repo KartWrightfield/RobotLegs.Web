@@ -201,7 +201,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "Aguero";
                     return;
                 case "Alexander-Arnold":
-                    playerInfo.WebName = "TAA";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "TAA",
+                        "Trent Asexualander-Arnold"
+                    });
                     return;
                 case "Alisson":
                     playerInfo.WebName = "Thini Alissoj";
@@ -235,6 +239,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                         "Leon Goaley"
                     });
                     return;
+                case "Baleba":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        ":notes _Then I Saw Her Face, Now I'm a Baleba_ :notes"
+                    });
+                    return;
                 case "Barnes":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
@@ -242,7 +252,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     });
                     return;
                 case "Bernardo":
-                    playerInfo.WebName = "Banano Silva";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "ACABernado Silva",
+                        "Banano Silva"
+                    });
                     return;
                 case "Botman":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
@@ -342,6 +356,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Dawson":
                     playerInfo.WebName = "Balon D'awson";
                     return;
+                case "De Bruyne":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Kevin Me Tooyne"
+                    });
+                    return;
                 case "de Gea":
                     playerInfo.WebName = "The Gea";
                     return;
@@ -353,6 +373,12 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     return;
                 case "Dewsbury-Hall":
                     playerInfo.WebName = "Wedding Venue";
+                    return;
+                case "Diaby":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Yabba-Diaby-Doo"
+                    });
                     return;
                 case "Dias":
                     playerInfo.WebName = "Rubbin' de Ass";
@@ -457,6 +483,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
                         "Aryan Heskey",
+                        "ErLGBTQing Haaland",
                         "Hahahaaland",
                         "The Haalander",
                         "The Terminator"
@@ -473,6 +500,15 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     {
                         "'The Korean One' - _Pep Guardiola_"
                     });
+                    return;
+                case "Henderson":
+                    if (playerInfo.FirstName == "Jordan")
+                    {
+                        playerInfo.WebName = PickRandomNickname(new List<string>()
+                        {
+                            "Jordan Transgenderson"
+                        });
+                    }
                     return;
                 case "Iheanacho":
                     playerInfo.WebName = PickRandomNickname(new List<string>()
@@ -789,7 +825,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "Sabitcher";
                     return;
                 case "Saka":
-                    playerInfo.WebName = ":salad";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        ":salad",
+                        "Labourkayo Saka"
+                    });
                     return;
                 case "Salah":
                     if (DateTime.Now.Month > 11 || DateTime.Now.Month < 3)

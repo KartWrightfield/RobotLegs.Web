@@ -4,7 +4,7 @@
     <h1 class="text-center">New Nickname</h1>
     <div class="col-6 offset-3">
         <form action="/nicknames/<%= id %>?_method=PATCH" method="POST">
-            <input type="text" name="nickname" placeholder="Nickname">
+            <input type="text" name="nickname" placeholder="Nickname" required>
             <button>Submit</button>
         </form>
         <a href="/nicknames/<%= id %>">Cancel</a>
