@@ -9,6 +9,10 @@ const catchAsync = require('./utils/catchAsync.js');
 const ExpressError = require('./utils/ExpressError.js');
 const session = require('express-session');
 const flash = require("connect-flash");
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
+
+const User = require('./models/user');
 
 const mainGameInfo = require('./seeds/maingameinfo.js');
 const leagueInfo = require('./seeds/leagueinfo.js');
@@ -17,7 +21,8 @@ const fixtures = require('./seeds/fixtures.js');
 const week1Picks = require('./seeds/week1picks.js');
 const week1Transfers = require('./seeds/week1transfers.js');
 
-const nicknames = require('./routes/nicknames');
+const nicknameRoutes = require('./routes/nicknames');
+const userRoutes = require('./routes/users');
 
 mongoose.connect('mongodb://localhost:27017/robotLegs')
     .then(() => {
@@ -47,13 +52,21 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 app.use(flash());
 
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 app.use((req, res, next) => {
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     next();
 })
 
-app.use('/nicknames', nicknames);
+app.use('/nicknames', nicknameRoutes);
+app.use('/', userRoutes);
 
 app.get('/', (req, res) => {
     var gameweekFixtures = fixtures.filter(function (fix) {
