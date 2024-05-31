@@ -65,6 +65,10 @@ router.get('/:id', catchAsync(async (req, res) => {
     const { id } = req.params;
     const nickname = await Nickname.findById(id);
 
+    if (!nickname){
+        req.flash('error', 'Unable to find nicknames for that player!')
+    }
+    
     res.render('nicknames/details', { nickname });
 }))
 
