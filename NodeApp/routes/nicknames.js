@@ -4,18 +4,19 @@ const Nickname = require("../models/nickname");
 const Joi = require("joi");
 const ExpressError = require("../utils/ExpressError");
 const router = express.Router();
+const { isLoggedIn } = require('../middleware');
 
-router.get('/', catchAsync(async (req, res) => {
+router.get('/', isLoggedIn, catchAsync(async (req, res) => {
     const nicknames = await Nickname.find({});
 
     res.render('nicknames/index', { nicknames });
 }))
 
-router.get('/new', (req, res) => {
+router.get('/new', isLoggedIn, (req, res) => {    
     res.render('nicknames/new');
 })
 
-router.post('/', catchAsync(async (req, res) => {
+router.post('/', isLoggedIn, catchAsync(async (req, res) => {
     const nicknameSchema = Joi.object({
         name: Joi.string().required(),
         nickname: Joi.string().required()
@@ -36,7 +37,7 @@ router.post('/', catchAsync(async (req, res) => {
     res.redirect(`/nicknames/${newNickname.id}`);
 }))
 
-router.patch('/:id', catchAsync(async (req, res) => {
+router.patch('/:id', isLoggedIn, catchAsync(async (req, res) => {
     if (!req.body.nickname){
         throw new ExpressError("Nickname is required", 400);
     }
@@ -53,7 +54,7 @@ router.patch('/:id', catchAsync(async (req, res) => {
     res.redirect(`/nicknames/${id}`);
 }))
 
-router.delete('/:id', catchAsync(async (req, res) => {
+router.delete('/:id', isLoggedIn, catchAsync(async (req, res) => {
     const { id } = req.params;
     await Nickname.findByIdAndDelete(id);
 
@@ -61,7 +62,7 @@ router.delete('/:id', catchAsync(async (req, res) => {
     res.redirect('/nicknames');
 }))
 
-router.get('/:id', catchAsync(async (req, res) => {
+router.get('/:id', isLoggedIn, catchAsync(async (req, res) => {
     const { id } = req.params;
     const nickname = await Nickname.findById(id);
 
@@ -72,7 +73,7 @@ router.get('/:id', catchAsync(async (req, res) => {
     res.render('nicknames/details', { nickname });
 }))
 
-router.get('/:id/addNickname', (req, res) => {
+router.get('/:id/addNickname', isLoggedIn, (req, res) => {
     const { id } = req.params;
     res.render(`nicknames/addNickname`, { id });
 })
