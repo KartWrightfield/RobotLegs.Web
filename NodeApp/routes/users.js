@@ -13,6 +13,16 @@ router.post('/login', passport.authenticate('local', { failureFlash: true, failu
     res.redirect('/');
 })
 
+router.get('/logout', (req, res) => {
+    req.logout(function (err) {
+        if (err){
+            return next(err);
+        }
+        req.flash('success', 'Logged Out');
+        res.redirect('/');
+    });    
+})
+
 router.get('/register', (req, res) =>{
     res.render('users/register');
 });
