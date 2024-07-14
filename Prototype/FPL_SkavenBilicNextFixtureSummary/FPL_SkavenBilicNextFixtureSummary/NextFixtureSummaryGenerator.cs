@@ -450,7 +450,11 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = "Firminho";
                     return;
                 case "Foden":
-                    playerInfo.WebName = "Filth Oden";
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Filth Oden",
+                        "Grimace"
+                    });
                     return;
                 case "Garnacho":
                     playerInfo.WebName = "Garnacho Nacho Man";
@@ -614,6 +618,7 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
                         "Alex is Mac Allister",
+                        "Mac Tonight :moon",
                         "Max Allister"
                     });
                     return;
@@ -834,7 +839,8 @@ namespace FPL_SkavenBilicNextFixtureSummary
                     playerInfo.WebName = PickRandomNickname(new List<string>()
                     {
                         ":salad",
-                        "Labourkayo Saka"
+                        "Labourkayo Saka",
+                        "Starboy"
                     });
                     return;
                 case "Salah":

@@ -1,7 +1,6 @@
 body {
     background: linear-gradient(to bottom right, #24292e, #4e288b) fixed;
     font-family: 'Chakra Petch', -apple-system, sans-serif;
-    padding-top: 70px;
 }
 
 #card {

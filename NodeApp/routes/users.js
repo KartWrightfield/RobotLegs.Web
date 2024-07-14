@@ -1,46 +1,18 @@
 ﻿const express = require('express');
-const router = express.Router();
 const passport = require('passport');
+const router = express.Router();
+const users = require('../controllers/users');
 const catchAsync = require('../utils/catchAsync');
-const User = require('../models/user');
+const { storeReturnTo } = require('../middleware');
 
-router.get('/login', (req, res) => {
-    res.render('users/login');
-})
+router.route('/login')
+    .get(users.renderLoginForm)
+    .post(storeReturnTo, passport.authenticate('local', { failureFlash: true, failureRedirect:'/login' }), users.login)
 
-router.post('/login', passport.authenticate('local', { failureFlash: true, failureRedirect:'/login' }), (req, res) =>{
-    req.flash('success', 'Logged In');
-    res.redirect('/');
-})
+router.get('/logout', users.logout)
 
-router.get('/logout', (req, res) => {
-    req.logout(function (err) {
-        if (err){
-            return next(err);
-        }
-        req.flash('success', 'Logged Out');
-        res.redirect('/');
-    });    
-})
-
-router.get('/register', (req, res) =>{
-    res.render('users/register');
-});
-
-router.post('/register', catchAsync(async(req, res) => {
-    try {
-        const {username, email, password} = req.body;
-        const user = new User({email, username});
-        const registeredUser = await User.register(user, password);
-
-        req.flash('success', 'Account Created');
-        res.redirect('/');
-    } catch (e) {
-        req.flash('error', e.message)
-        res.redirect('/register')
-    }
-}));
-
-
+router.route('/register')
+    .get(users.renderRegistrationForm)
+    .post(catchAsync(users.register))
 
 module.exports = router;
