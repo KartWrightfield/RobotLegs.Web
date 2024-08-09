@@ -931,8 +931,20 @@ namespace FPL_SkavenBilicNextFixtureSummary
                 case "Vestergaard":
                     playerInfo.WebName = "Bestergaard";
                     return;
+                case "Vicario":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Dracula"
+                    });
+                    return;
                 case "Walcott":
                     playerInfo.WebName = "WalGott";
+                    return;
+                case "Walker":
+                    playerInfo.WebName = PickRandomNickname(new List<string>()
+                    {
+                        "Texas Ranger"
+                    });
                     return;
                 case "Ward-Prowse":
                     playerInfo.WebName = PickRandomNickname(new List<string>()

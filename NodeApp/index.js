@@ -9,6 +9,7 @@ const session = require('express-session');
 const flash = require("connect-flash");
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
+const mongoSanitize = require('express-mongo-sanitize');
 
 const User = require('./models/user');
 
@@ -34,6 +35,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 const sessionConfig = {
+    name: 'robotLegsSession',
     secret: 'tempsecret',
     resave: false,
     saveUninitialized: true,
@@ -45,6 +47,7 @@ const sessionConfig = {
 }
 app.use(session(sessionConfig));
 app.use(flash());
+app.use(mongoSanitize())
 
 app.use(passport.initialize());
 app.use(passport.session());
