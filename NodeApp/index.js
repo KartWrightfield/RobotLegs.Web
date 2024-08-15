@@ -24,7 +24,7 @@ const MongoStore = require('connect-mongo');
 
 const gameweekController = require('./controllers/gameweek');
 
-const dbUrl = 'mongodb://localhost:27017/robotLegs';
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/robotLegs';
 mongoose.connect(dbUrl)
     .then(() => {
         console.log("MONGO CONNECTION OPEN!")
@@ -42,10 +42,12 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
+
+const secret = process.env.SECRET || 'thisShouldBeABetterSecret';
 const store = MongoStore.create({
     mongoUrl: dbUrl,
     touchAfter: 24 * 60 * 60,
-    crypto: 'thisshouldbeabettersecret'
+    crypto: secret
 });
 
 store.on("error", function (e){
@@ -55,7 +57,7 @@ store.on("error", function (e){
 const sessionConfig = {
     store,
     name: 'robotLegsSession',
-    secret: 'tempsecret',
+    secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
