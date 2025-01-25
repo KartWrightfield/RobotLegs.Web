@@ -82,7 +82,7 @@ namespace FPLCore
         public long Element { get; set; }
     }
 
-    public enum Identifier { Assists, Bonus, Bps, GoalsScored, OwnGoals, PenaltiesMissed, PenaltiesSaved, RedCards, Saves, YellowCards };
+    public enum Identifier { Assists, Bonus, Bps, GoalsScored, OwnGoals, PenaltiesMissed, PenaltiesSaved, RedCards, Saves, YellowCards, MngUnderdogWin, MngUnderdogDraw };
 
     public partial class Fixtures
     {
@@ -138,6 +138,10 @@ namespace FPLCore
                     return Identifier.Saves;
                 case "yellow_cards":
                     return Identifier.YellowCards;
+                case "mng_underdog_win":
+                    return Identifier.MngUnderdogWin;
+                case "mng_underdog_draw":
+                    return Identifier.MngUnderdogDraw;
             }
             throw new Exception("Cannot unmarshal type Identifier");
         }
@@ -181,6 +185,12 @@ namespace FPLCore
                     return;
                 case Identifier.YellowCards:
                     serializer.Serialize(writer, "yellow_cards");
+                    return;
+                case Identifier.MngUnderdogWin:
+                    serializer.Serialize(writer, "mng_underdog_win");
+                    return;
+                case Identifier.MngUnderdogDraw:
+                    serializer.Serialize(writer, "mng_underdog_draw");
                     return;
             }
             throw new Exception("Cannot marshal type Identifier");
